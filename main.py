@@ -11,6 +11,15 @@ def game_id_grabber():
     url = f"https://api.rawg.io/api/games?key={rawg_key}&search={to_search}"
     response = requests.get(url)
     data = response.json()
-    print(data["results"][0]["id"])
+    #print(data["results"][0]["id"])
+    return data["results"][0]["id"]
 
-game_id_grabber()
+def game_data(id):
+    url = f"https://api.rawg.io/api/games/{id}?key={rawg_key}"
+    print(url)
+    response = requests.get(url)
+    data = response.json()
+    print(data)
+
+my_id_test = game_id_grabber()
+game_data(my_id_test)

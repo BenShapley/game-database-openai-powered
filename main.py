@@ -3,23 +3,22 @@ import requests
 
 with open("keys/rawg_keys.json", "r") as rawg_files:
     rawg_keys = json.load(rawg_files)
-
 rawg_key = rawg_keys["client_key"]
 
-test_input = input("Enter a game name:")
-modified_string = test_input.replace(" ", "%20")
+base_url = "https://api.rawg.io/api/games"
 
 # Gets a games ID based on a user search
-# TODO = add user search as an input / replaced modified_string
-def game_id_grabber():
-    url = f"https://api.rawg.io/api/games?key={rawg_key}&search={modified_string}"
+def game_id_grabber(user_search):
+    modified_string = user_search.replace(" ", "%20")
+    url = base_url+f"?key={rawg_key}&search={modified_string}"
+    print(url)
     response = requests.get(url)
     data = response.json()
     return data["results"][0]["id"]
 
 # Returns game data for use
 def game_data(id):
-    url = f"https://api.rawg.io/api/games/{id}?key={rawg_key}"
+    url = base_url+f"/{id}?key={rawg_key}"
     print(url)
     response = requests.get(url)
     data = response.json()
@@ -38,15 +37,17 @@ def game_ratings(id):
     ratings_data = [{"title": rating["title"], "percent": rating["percent"]} for rating in ratings]
     for i in ratings_data:
         print(i)
+    return ratings_data
 
 # Returns game screenshots
 def game_screenshots(id):
-    url = f"https://api.rawg.io/api/games/{id}/screenshots?key={rawg_key}"
+    url = base_url+f"/{id}/screenshots?key={rawg_key}"
     response = requests.get(url)
     data = response.json()
     screenshots = data["results"]
     for sc in screenshots:
         print(sc["image"])
+    return screenshots
 
 # Returns reddit URL
 def game_reddit_url(id):
@@ -64,6 +65,14 @@ def game_platforms(id):
     platforms = [i["platform"]["name"] for i in game_platforms]
     for i in platforms:
         print(i)
+    return platforms
 
-my_id_test = game_id_grabber()
-game_description(my_id_test)
+def game_stores(id):
+    url = base_url+f"/{id}/stores?key={rawg_key}"
+    response = requests.get(url)
+    data = response.json()
+    print(data)
+
+test_input = input("Enter a game name:")
+my_id_test = game_id_grabber(test_input)
+game_stores(my_id_test)

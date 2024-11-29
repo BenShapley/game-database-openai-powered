@@ -85,6 +85,78 @@ def game_stores(id):
     data = response.json()
     print(data)
 
+
+functions = [
+	{
+		"type": "function",
+		"function": {
+			"name": "get_game_description",
+			"description": "Gets the description for a desired video game",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+			}
+		}
+	}
+]
+
+# OpenAI function to return a game description
+def get_game_description(user_input):
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_description(desired_id)
+    return f"The {user_input} game is described as {desired_data}"
+
+# OpenAI question input and answer
+def ask_question(question):
+    messages.append({"role": "user", "content": question})
+    
+    response = client.chat.completions.create(
+		model = "GPT-4",
+		messages = messages,
+		tools = functions,
+		tool_choice = "auto"
+	)
+
+    response_message = response.choices[0].message
+    gpt_tools = response.choices[0].message.tool_calls
+
+    if gpt_tools:
+        available_functions = {
+			"get_game_description": get_game_description
+		}
+
+        messages.append(response_message)
+        for gpt_tool in gpt_tools:
+            function_name = gpt_tool.function.name
+            function_to_call = available_functions[function_name]
+            function_parameters = json.loads(gpt_tool.function.arguments)
+            function_response = function_to_call(function_parameters.get('user_input'))
+            messages.append(
+				{
+					"tool_call_id": gpt_tool.id,
+					"role": "tool",
+					"name": function_name,
+					"content": function_response
+				}
+			)
+            second_response = client.chat.completions.create(
+				model = "GPT-4",
+				messages=messages
+			)
+            print("SUCCESS")
+            print (second_response.choices[0].message.content)
+            return second_response.choices[0].message.content
+
+    else:
+        print("DEFAULTED")
+        print(response.choices[0].message.content)
+        return response.choices[0].message.content
+
 test_input = input("Enter a game name:")
-my_id_test = game_id_grabber(test_input)
-game_stores(my_id_test)
+ask_question(test_input)

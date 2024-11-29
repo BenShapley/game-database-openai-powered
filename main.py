@@ -10,8 +10,11 @@ client = AzureOpenAI(
 )
 
 messages = [
-	{"role": "system", "content": """If there the user asks you what a game is about that you dont think exists,
-  please check the 'get_game_description' function to find it"""},
+	{"role": "system", "content": """If the the user asks you what a game is about that you dont think exists,
+  please check the 'get_game_description' function to find it. If the user asks where you can buy a game
+  that you dont think exists, please check the 'get_game_stores' function to find it. If the user
+  asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function
+  to find it."""},
 ]
 
 with open("keys/rawg_keys.json", "r") as rawg_files:
@@ -108,8 +111,40 @@ functions = [
         "type": "function",
         "function": {
             "name": "get_game_stores",
-			"description": """Only returns where you can buy a desired game.
-            An example would be someone asking 'Where can I get the game [name] from?'""",
+			"description": """Returns where the user can buy/get a desired game.
+            An example would be someone asking 'Where can I get/buy the game [name] from?'""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+            }
+        },
+        "type": "function",
+        "function": {
+            "name": "get_game_reddit",
+			"description": """Only returns a games Reddit page.
+            An example would be someone asking 'Does the game [name] have a reddit or social media'""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+            }
+        },
+        "type": "function",
+        "function": {
+            "name": "get_game_reviews",
+			"description": """Returns reviews and what people think about a desired game.
+            An example would be someone asking 'What do people think/how good is the game [name]'""",
 			"parameters": {
 				"type": "object",
 				"properties": {
@@ -126,17 +161,31 @@ functions = [
 
 # OpenAI function to return a game description
 def get_game_description(user_input):
-    print("GETTING DESCRIPTION")
+    print("FETCHING DESCRIPTION")
     desired_id = game_id_grabber(user_input)
     desired_data = game_description(desired_id)
     return f"The {user_input} game is described as {desired_data}"
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):
-    print("GETTING STORES")
+    print("FETCHING STORES")
     desired_id = game_id_grabber(user_input)
     desired_data = game_stores(desired_id)
     return f"You can buy the game {user_input} in these stores: {desired_data}"
+
+# OpenAI function to return a game reddit if it exists
+def get_game_reddit(user_input):
+    print("FETCHING REDDIT")
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_reddit_url(desired_id)
+    return f"If the game {user_input} has a reddit, it may be here{desired_data}"
+
+# OpenAI function to return reviews about a game
+def get_game_reviews(user_input):
+    print("FETCHING REVIEWS")
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_ratings(desired_id)
+    return f"Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally"
 
 # OpenAI question input and answer
 def ask_question(question):
@@ -155,7 +204,9 @@ def ask_question(question):
     if gpt_tools:
         available_functions = {
 			"get_game_description": get_game_description,
-            "get_game_stores" : get_game_stores
+            "get_game_stores" : get_game_stores,
+            "get_game_reddit" : get_game_reddit,
+            "get_game_reviews": get_game_reviews
 		}
 
         messages.append(response_message)

@@ -1,5 +1,17 @@
 import json
 import requests
+from openai import AzureOpenAI
+import os
+
+client = AzureOpenAI(
+    api_key = os.getenv("AZURE_KEY"),
+    azure_endpoint = os.getenv("AZURE_ENDPOINT"),
+    api_version = "2023-10-01-preview"
+)
+
+messages = [
+	{"role": "system", "content": "PERSONALITY"},
+]
 
 with open("keys/rawg_keys.json", "r") as rawg_files:
     rawg_keys = json.load(rawg_files)

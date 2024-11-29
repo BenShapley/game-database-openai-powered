@@ -10,7 +10,8 @@ client = AzureOpenAI(
 )
 
 messages = [
-	{"role": "system", "content": "PERSONALITY"},
+	{"role": "system", "content": """If there the user asks you what a game is about that you dont think exists,
+  please check the 'get_game_description' function to find it"""},
 ]
 
 with open("keys/rawg_keys.json", "r") as rawg_files:
@@ -83,7 +84,8 @@ def game_stores(id):
     url = base_url+f"/{id}/stores?key={rawg_key}"
     response = requests.get(url)
     data = response.json()
-    print(data)
+    #print(data)
+    return data
 
 
 functions = [
@@ -91,7 +93,7 @@ functions = [
 		"type": "function",
 		"function": {
 			"name": "get_game_description",
-			"description": "Gets the description for a desired video game",
+			"description": "Only returns what a desired game is about and provides a description",
 			"parameters": {
 				"type": "object",
 				"properties": {
@@ -101,8 +103,23 @@ functions = [
 					}
 				},
 				"required": ["user_input"]
-			}
-		}
+            }
+		},
+        "type": "function",
+        "function": {
+            "name": "get_game_stores",
+			"description": "Only returns where you can buy a desired game",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+            }
+        }
 	}
 ]
 
@@ -111,6 +128,12 @@ def get_game_description(user_input):
     desired_id = game_id_grabber(user_input)
     desired_data = game_description(desired_id)
     return f"The {user_input} game is described as {desired_data}"
+
+# OpenAI function to return where a game can be bought
+def get_game_stores(user_input):
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_stores(desired_id)
+    return f"You can buy the game {user_input} in these stores: {desired_data}"
 
 # OpenAI question input and answer
 def ask_question(question):
@@ -128,7 +151,8 @@ def ask_question(question):
 
     if gpt_tools:
         available_functions = {
-			"get_game_description": get_game_description
+			"get_game_description": get_game_description,
+            "get_game_stores" : get_game_stores
 		}
 
         messages.append(response_message)
@@ -150,13 +174,16 @@ def ask_question(question):
 				messages=messages
 			)
             print("SUCCESS")
+            #print(response)
             print (second_response.choices[0].message.content)
             return second_response.choices[0].message.content
 
     else:
         print("DEFAULTED")
+        #print(response)
         print(response.choices[0].message.content)
         return response.choices[0].message.content
 
 test_input = input("Enter a game name:")
+#print(get_game_description(test_input))
 ask_question(test_input)

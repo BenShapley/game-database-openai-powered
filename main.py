@@ -17,8 +17,7 @@ messages = [
 with open("keys/rawg_keys.json", "r") as rawg_files:
     rawg_keys = json.load(rawg_files)
 rawg_key = rawg_keys["client_key"]
-
-base_url = "https://api.rawg.io/api/games"
+base_url = rawg_keys["base_url"]
 
 # Gets a games ID based on a user search
 def game_id_grabber(user_search):
@@ -93,7 +92,8 @@ functions = [
 		"type": "function",
 		"function": {
 			"name": "get_game_description",
-			"description": "Only returns what a desired game is about and provides a description",
+			"description": """Only returns what a desired game is about and provides a description.
+            An example would be someone asking 'What is the game [name] about?'""",
 			"parameters": {
 				"type": "object",
 				"properties": {
@@ -108,7 +108,8 @@ functions = [
         "type": "function",
         "function": {
             "name": "get_game_stores",
-			"description": "Only returns where you can buy a desired game",
+			"description": """Only returns where you can buy a desired game.
+            An example would be someone asking 'Where can I get the game [name] from?'""",
 			"parameters": {
 				"type": "object",
 				"properties": {
@@ -125,12 +126,14 @@ functions = [
 
 # OpenAI function to return a game description
 def get_game_description(user_input):
+    print("GETTING DESCRIPTION")
     desired_id = game_id_grabber(user_input)
     desired_data = game_description(desired_id)
     return f"The {user_input} game is described as {desired_data}"
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):
+    print("GETTING STORES")
     desired_id = game_id_grabber(user_input)
     desired_data = game_stores(desired_id)
     return f"You can buy the game {user_input} in these stores: {desired_data}"

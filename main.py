@@ -15,7 +15,8 @@ messages = [
   please check the 'get_game_description' function to find it. If the user asks where you can buy a game
   that you dont think exists, please check the 'get_game_stores' function to find it. If the user
   asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function
-  to find it."""},
+  to find it. Can you after your reponse put an underscore (_) and then name the game we are talking about with 
+  title capitalisation."""},
 ]
 
 with open("keys/rawg_keys.json", "r") as rawg_files:
@@ -79,7 +80,6 @@ def game_reddit_url(id):
         return reddit_url
     else:
         return "No reddit"
-
 # Returns game platforms
 def game_platforms(id):
     data = game_data(id)

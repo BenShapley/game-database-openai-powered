@@ -11,11 +11,6 @@ body {
 h1{
 	/* padding: 10px; */
 	color: #ffffff;
-    display: flex;
-    text-align: center;
-    height: 100vh;
-    align-items: center; 
-    justify-content: center;
 	font-family: sans-serif;
 	text-transform: capitalize;
 }

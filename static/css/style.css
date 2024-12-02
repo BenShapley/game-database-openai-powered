@@ -1,0 +1,41 @@
+body {
+	background-color: #212121;
+    align-items: center;
+}
+
+h1{
+	/* padding: 10px; */
+	color: #ffffff;
+	font-family: sans-serif;
+	text-transform: capitalize;
+}
+
+p{
+	/* padding: 10px; */
+	color: #ffffff;
+	font-family: sans-serif;
+	text-transform: capitalize;
+}
+
+#prompt{
+    /* padding: 10px; */
+	color: #ffffff;
+	font-family: sans-serif;
+	text-transform: capitalize;
+}
+
+.absolutebackground {
+    height:100vh;
+    background-color: black;
+    opacity: 60%;
+    position: absolute;
+    top: 0;
+    width:100%;
+    pointer-events: none;
+}
+
+.main{
+    padding: 20px;
+    z-index: 10;
+    position: absolute;
+}

@@ -7,12 +7,15 @@
 	<title>Game Database</title>
 </head>
 <body style="background-image: url({{background_image}})">
-	<h1>Games</h1>
-	<form method="POST">
-		<label>Question:</label>
-		<input name=req_question type="text" value={{question}}><br><br>
-		<input type="submit" value="Submit!"><br><br>
-	</form>
-	<p>{{chatbot_response}}</p>
+	<div class="absolutebackground"></div>
+	<div class="main">
+		<h1>Games</h1>
+		<form method="POST">
+			<label id="prompt">Question:</label>
+			<input name=req_question type="text" value={{question}}><br><br>
+			<input type="submit" value="Submit!"><br><br>
+		</form>
+		<p>{{chatbot_response}}</p>
+	</div>
 </body>
 </html>

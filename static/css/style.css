@@ -32,7 +32,7 @@ p{
 .absolutebackground {
     height:100vh;
     background-color: black;
-    opacity: 60%;
+    opacity: 70%;
     position: absolute;
     top: 0;
     width:100vw;
@@ -46,8 +46,8 @@ p{
     top: 0;
     width: 100%;
     border: 0;
-    border-bottom: 5px;
-    border-bottom-color: #4CC8FF;
+    border-bottom: 2px solid #4CC8FF;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5);
   }
   
   .navbar #logo{

@@ -2,6 +2,7 @@ import json
 import requests
 from openai import AzureOpenAI
 import os
+import random
 
 client = AzureOpenAI(
     api_key = os.getenv("AZURE_KEY"),
@@ -62,10 +63,11 @@ def game_screenshots(user_input):
     data = response.json()
     #print(data)
     screenshots = data["results"]
+    i = random.randrange(0,len(screenshots))
     if screenshots:
         # for sc in screenshots:
         #     print(sc["image"])
-        return screenshots[0]["image"]
+        return screenshots[i]["image"]
     else:
         return ""
 

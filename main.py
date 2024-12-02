@@ -169,7 +169,7 @@ def get_game_description(user_input):
     print("FETCHING DESCRIPTION")
     desired_id = game_id_grabber(user_input)
     desired_data = game_description(desired_id)
-    return f"The {user_input} game is described as {desired_data}. Mold your response personality based on the what the game is about/genre."
+    return f"""The {user_input} game is described as {desired_data}."""
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):

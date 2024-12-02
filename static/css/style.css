@@ -40,7 +40,9 @@ p{
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: 1px;
+    /* padding-bottom: 10px; */
+    border: 0;
+    border-bottom: 5px;
     border-bottom-color: #4CC8FF;
   }
   
@@ -62,8 +64,17 @@ p{
   }
 
 .main{
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 20px;
     z-index: 10;
     position: absolute;
+}
+
+#search_bar{
+    width: 194.567px;
+    height: 26.766px;
+    background-color: black;
+    color: white;
+    border-radius: 27.192px;
+    border: 3.199px solid #4CC8FF;
 }

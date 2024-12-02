@@ -12,19 +12,14 @@
 	<div class="navbar">
 		<img id="logo" src="static/logo.png">
 		<form method="POST">
-			<label id="prompt">Question:</label>
-			<input name=req_question type="text" value={{question}}><br><br>
+			<!-- <label id="prompt">Question:</label> -->
+			<input id="search_bar" name=req_question type="text" value={{question}}><br><br>
 			<!-- <input type="submit" value="Submit!"><br><br> -->
 		</form>
 	  </div>
 	
 	<div class="main">
-		<h1>Games</h1>
-		<!-- <form method="POST">
-			<label id="prompt">Question:</label>
-			<input name=req_question type="text" value={{question}}><br><br>
-			<input type="submit" value="Submit!"><br><br>
-		</form> -->
+		<h1>{{game}}</h1>
 		<p>{{chatbot_response}}</p>
 	</div>
 </body>

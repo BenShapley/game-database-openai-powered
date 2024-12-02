@@ -34,7 +34,35 @@ p{
     pointer-events: none;
 }
 
+.navbar {
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px;
+    border-bottom-color: #4CC8FF;
+  }
+  
+  .navbar #logo{
+    display: block;
+    float: left;
+    padding: 14px 16px;
+    height: 48px;
+    width: 86px;
+  }
+  /* Links inside the navbar */
+  .navbar form {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
 .main{
+    margin-top: 30px;
     padding: 20px;
     z-index: 10;
     position: absolute;

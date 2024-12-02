@@ -60,12 +60,12 @@ def game_screenshots(user_input):
     url = base_url+f"/{id}/screenshots?key={rawg_key}"
     response = requests.get(url)
     data = response.json()
-    print(data)
+    #print(data)
     screenshots = data["results"]
     if screenshots:
-        for sc in screenshots:
-            print(sc["image"])
-        return screenshots[0]
+        # for sc in screenshots:
+        #     print(sc["image"])
+        return screenshots[0]["image"]
     else:
         return ""
 

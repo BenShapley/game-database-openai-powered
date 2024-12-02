@@ -7,11 +7,13 @@
 	<title>Game Database</title>
 </head>
 <body style="background-image: url({{background_image}})">
-	<div class="absolutebackground"></div>
+	{% if show_absolute_background %}
+		<div class="absolutebackground"></div>
+	{% endif %}
 
 	<div class="navbar">
 		<img id="logo" src="static/logo.png">
-		<form method="POST">
+		<form method="POST" action="/search">
 			<!-- <label id="prompt">Question:</label> -->
 			<input id="search_bar" name=req_question type="text" value={{question}}><br><br>
 			<!-- <input type="submit" value="Submit!"><br><br> -->
@@ -23,4 +25,4 @@
 		<p>{{chatbot_response}}</p>
 	</div>
 </body>
-</html>
+</html> 

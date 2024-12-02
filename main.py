@@ -55,14 +55,19 @@ def game_ratings(id):
     return ratings_data
 
 # Returns game screenshots
-def game_screenshots(id):
+def game_screenshots(user_input):
+    id = game_id_grabber(user_input)
     url = base_url+f"/{id}/screenshots?key={rawg_key}"
     response = requests.get(url)
     data = response.json()
+    print(data)
     screenshots = data["results"]
-    for sc in screenshots:
-        print(sc["image"])
-    return screenshots
+    if screenshots:
+        for sc in screenshots:
+            print(sc["image"])
+        return screenshots[0]
+    else:
+        return ""
 
 # Returns reddit URL
 def game_reddit_url(id):
@@ -238,6 +243,7 @@ def ask_question(question):
         print(response.choices[0].message.content)
         return response.choices[0].message.content
 
-test_input = input("Enter a game name:")
+#test_input = input("Enter a game name:")
+#game_screenshots(test_input)
 #print(get_game_description(test_input))
-ask_question(test_input)
+#ask_question(test_input)

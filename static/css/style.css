@@ -137,6 +137,12 @@ p{
     color: #ffffff;
 }
 
+.search_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    }
+
 #large_search{
     margin-top: 30px;
     width: 500px;
@@ -148,9 +154,19 @@ p{
     border: 5px solid #4CC8FF;
     /* padding-top: 20px; */
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 50px;
     transition: all .5s ease;
 }
+
+.search_icon {
+    position: absolute;
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(0%);
+    width: 30px; 
+    height: 30px;
+    z-index: 10;
+    }
 
 #large_search:hover{
     color: rgba(255, 255, 255, 1);

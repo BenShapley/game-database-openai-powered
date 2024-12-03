@@ -184,7 +184,8 @@ def get_game_description(user_input):
     desired_id = game_id_grabber(user_input)
     desired_data = game_description(desired_id)
     return f"""The {user_input} game is described as {desired_data}.
-    Take on the personality of the game you are describing."""
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
+    and <br> breaks where necessary. Please use HTML styling to spice it up!!!"""
     # return f"""The {user_input} game is described as {desired_data}. I am putting this into my HTML project.
     # I currently have a heading 1 and 2 so just format the description to make it look nice and professional and using
     # proper HTML syntaxing"""
@@ -194,21 +195,27 @@ def get_game_stores(user_input):
     print("FETCHING STORES")
     desired_id = game_id_grabber(user_input)
     desired_data = game_stores(desired_id)
-    return f"You can buy the game {user_input} in these stores: {desired_data}"
+    return f"""You can buy the game {user_input} in these stores: {desired_data}.
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
+    and <br> breaks where necessary."""
 
 # OpenAI function to return a game reddit if it exists
 def get_game_reddit(user_input):
     print("FETCHING REDDIT")
     desired_id = game_id_grabber(user_input)
     desired_data = game_reddit_url(desired_id)
-    return f"If the game {user_input} has a reddit, it may be here{desired_data}"
+    return f"""If the game {user_input} has a reddit, it may be here{desired_data}.
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
+    and <br> breaks where necessary."""
 
 # OpenAI function to return reviews about a game
 def get_game_reviews(user_input):
     print("FETCHING REVIEWS")
     desired_id = game_id_grabber(user_input)
     desired_data = game_ratings(desired_id)
-    return f"Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally"
+    return f"""Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally.
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
+    where necessary. Please use HTML styling to spice it up!!!"""
 
 # OpenAI question input and answer
 def ask_question(question):

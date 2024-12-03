@@ -27,8 +27,8 @@
 	<div class="main">
 		<h1>{{game}}</h1>
 		<h2>By {{developer}}</h2>
-		<!-- {{chatbot_response}} -->
-		<p>{{chatbot_response}}</p>
+		{{chatbot_response | safe}}
+		<!-- <p>{{chatbot_response}}</p> -->
 	</div>
 </body>
 </html> 

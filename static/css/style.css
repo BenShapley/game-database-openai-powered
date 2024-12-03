@@ -34,16 +34,6 @@ p{
 	text-transform: capitalize;
 }
 
-.absolutebackground {
-    height:100vh;
-    background-color: black;
-    opacity: 70%;
-    position: absolute;
-    top: 0;
-    width:100vw;
-    pointer-events: none;
-}
-
 .navbar {
     overflow: hidden;
     background-color: #000000;
@@ -90,7 +80,7 @@ p{
     border-radius: 27.192px;
     border: 3.199px solid #4CC8FF;
     /* padding-top: 20px; */
-    padding-left: 10px;
+    padding-left: 20px;
     transition: all .5s ease;
 }
 
@@ -102,4 +92,21 @@ p{
 #search_bar:focus{
     color: white;
     border-radius: 5px;
+}
+
+#help{
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; 
+    margin-left: auto; 
+    padding-right: 20px;
+    padding-top: 14px;
+    transition: all .5s ease;
+    opacity: .5;
+    color: #aeaeae;
+    }
+
+#help:hover{
+    opacity: 1;
+    color: #ffffff;
 }

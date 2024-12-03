@@ -11,9 +11,6 @@
 		background-repeat: no-repeat; 
 		background-position: center center; 
 		background-attachment: fixed;">
-	{% if show_absolute_background %}
-		<div class="absolutebackground"></div>
-	{% endif %}
 
 	<div class="navbar">
 		<a href="/"> <img id="logo" src="static/logo.png"> </a>
@@ -22,6 +19,7 @@
 			<input id="search_bar" name=req_question type="text" value={{question}}><br><br>
 			<!-- <input type="submit" value="Submit!"><br><br> -->
 		</form>
+		<a href="/"> <img id="help" src="static/help_icon.png"> </a>
 	  </div>
 	
 	<div class="main">

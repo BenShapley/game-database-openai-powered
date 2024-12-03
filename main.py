@@ -236,8 +236,11 @@ def ask_question(question):
 			)
             print("SUCCESS")
             #print(response)
-            print (second_response.choices[0].message.content)
-            return second_response.choices[0].message.content
+            
+            #print (second_response.choices[0].message.content)
+            split_response = second_response.choices[0].message.content.split("_")
+            game_name = split_response[1]
+            return second_response.choices[0].message.content , game_name
 
     else:
         print("DEFAULTED")

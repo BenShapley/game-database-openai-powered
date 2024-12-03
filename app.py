@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return render_template('index.html', question="Search...", chatbot_response="", background_image="static/default_background.png", 
-						game="Look up a game!")
+	return render_template('index.html', question="Search...", background_image="static/default_background.png")
 
 @app.route('/', methods=['POST'])
 def index_post():

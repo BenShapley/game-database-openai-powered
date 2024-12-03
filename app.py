@@ -15,3 +15,7 @@ def index_post():
 	dev = main.game_developer(game_name)
 	return render_template('search.html', question=user_question, chatbot_response=chatbot_response, background_image=get_image, 
 						game=game_name, show_absolute_background=True, developer=dev) 
+
+@app.route('/help')
+def index_help():
+	return render_template('help.html', question="Give it a go...", background_image="static/default_background.png") 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="static/css/style_help.css">
+	<title>Help Page</title>
+</head>
+<body style="background-image: url({{background_image}});
+		background-size: 1920px 1080px; 
+		background-repeat: no-repeat; 
+		background-position: center center; 
+		background-attachment: fixed;">
+
+	<div class="navbar">
+		<a href="/"> <img id="logo" src="static/logo.png" alt="Project Logo & Home Button"> </a>
+		<form method="POST" action="/">
+			<input id="search_bar" name=req_question type="text" value="{{question}}"><br><br>
+		</form>
+		<a href="/help"> <img id="help" src="static/help_icon.png" alt="Help Screen Icon"> </a>
+	  </div>
+	
+	<div class="main">
+		<h1>HELP</h1>
+		<h2>Tips For Prompts</h2>
+
+		<div class="help_section">
+			<h6>Descriptions</h6>
+			<p>To find the description of a game, use prompts like:</p>
+			<div class="prompt_example">
+				<li>"What is the game Destiny 2?"</li>
+				<li>"Describe what Minecraft is"</li>
+			</div>
+		</div>
+		
+		<div class="help_section">
+			<h6>Reviews & Ratings</h6>
+			<p>To get game reviews and ratings, use prompts like:</p>
+			<div class="prompt_example">
+				<li>"What do people think about Fall Guys?"</li>
+				<li>"Do people enjoy playing Dead by Daylight?"</li>
+			</div>
+		</div>
+
+		<div class="help_section">
+			<h6>Subreddit</h6>
+			<p>To check if a game has a subreddit, use prompts like:</p>
+			<div class="prompt_example">
+				<li>"Does The Casting of Frank Stone have a subreddit?"</li>
+				<li>"What is Fortnites reddit?"</li>
+			</div>
+		</div>
+
+		<div class="help_section">
+			<h6>Stores</h6>
+			<p>To see where you can buy a game, use prompts like:</p>
+			<div class="prompt_example">
+				<li>"Where can I buy Still Wakes The Deep?"</li>
+				<li>"How much is Call of Duty Cold War?"</li>
+			</div>
+		</div>
+	</div>
+</body>
+</html> 

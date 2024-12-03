@@ -15,7 +15,7 @@ messages = [
   please check the 'get_game_description' function to find it. If the user asks where you can buy a game
   that you dont think exists, please check the 'get_game_stores' function to find it. If the user
   asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function
-  to find it. Can you after your reponse put an underscore (_) and then name the game we are talking about with 
+  to find it. Can you after your reponse put an underscore (|) and then name the game we are talking about with 
   title capitalisation."""},
 ]
 
@@ -102,8 +102,12 @@ def game_stores(id):
 def game_developer(user_input):
     desired_id = game_id_grabber(user_input)
     desired_data = game_data(desired_id)
-    main_dev = desired_data["developers"][0]["name"]
-    return main_dev
+    developer = desired_data["developers"]
+    if developer:
+        main_dev = desired_data["developers"][0]["name"]
+        return main_dev
+    else:
+        return ""
 
 functions = [
 	{
@@ -179,7 +183,11 @@ def get_game_description(user_input):
     print("FETCHING DESCRIPTION")
     desired_id = game_id_grabber(user_input)
     desired_data = game_description(desired_id)
-    return f"""The {user_input} game is described as {desired_data}."""
+    return f"""The {user_input} game is described as {desired_data}.
+    Take on the personality of the game you are describing."""
+    # return f"""The {user_input} game is described as {desired_data}. I am putting this into my HTML project.
+    # I currently have a heading 1 and 2 so just format the description to make it look nice and professional and using
+    # proper HTML syntaxing"""
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):
@@ -246,14 +254,14 @@ def ask_question(question):
             #print(response)
             
             #print (second_response.choices[0].message.content)
-            split_response = second_response.choices[0].message.content.split("_")
+            split_response = second_response.choices[0].message.content.split("|")
             main_response = split_response[0]
             game_name = split_response[1]
             return main_response, game_name
 
     else:
         print("DEFAULTED")
-        return response.choices[0].message.content
+        return response.choices[0].message.content, ""
 
 #test_input = input("Enter a game name:")
 #game_screenshots(test_input)

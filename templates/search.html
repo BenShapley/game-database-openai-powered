@@ -19,14 +19,15 @@
 	<div class="navbar">
 		<a href="/"> <img id="logo" src="static/logo.png" alt="Project Logo & Home Button"> </a>
 		<form method="POST" action="/">
-			<input id="search_bar" name=req_question type="text" value={{question}}><br><br>
+			<input id="search_bar" name=req_question type="text" value="{{question}}"><br><br>
 		</form>
-		<a href="/"> <img id="help" src="static/help_icon.png" alt="Help Screen Icon"> </a>
+		<a href="/help"> <img id="help" src="static/help_icon.png" alt="Help Screen Icon"> </a>
 	  </div>
 	
 	<div class="main">
 		<h1>{{game}}</h1>
 		<h2>By {{developer}}</h2>
+		<!-- {{chatbot_response}} -->
 		<p>{{chatbot_response}}</p>
 	</div>
 </body>

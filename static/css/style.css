@@ -32,7 +32,7 @@ h1{
     text-align: center;
     align-items: center; 
     justify-content: center;
-	font-family: sans-serif;
+	font-family: "Inter";
     font-weight: bolder;
 	text-transform: capitalize;
     text-shadow: 0px 18px 11.5px #00000015;
@@ -47,16 +47,17 @@ h2{
     text-align: center;
     align-items: center; 
     justify-content: center;
-	font-family: sans-serif;
+	font-family: "Inter";
     font-weight: lighter;
 	text-transform: capitalize;
+    margin: 0px;
     text-shadow: 0px 18px 11.5px #00000015;
 }
 
 p{
 	/* padding: 10px; */
 	color: #ffffff;
-	font-family: sans-serif;
+	font-family: "Inter";
 	text-transform: capitalize;
 }
 
@@ -92,7 +93,7 @@ p{
     color: #f2f2f2;
     text-align: center;
     /* padding: 14px 16px; */
-    padding-top: 20px;
+    padding-top: 22px;
     text-decoration: none;
   }
 
@@ -177,4 +178,5 @@ p{
 #large_search:focus{
     color: rgba(255, 255, 255, 1);
     border-radius: 10px;
+    border: 7.5px solid #4CC8FF;
 }

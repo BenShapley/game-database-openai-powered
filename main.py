@@ -80,6 +80,7 @@ def game_reddit_url(id):
         return reddit_url
     else:
         return "No reddit"
+
 # Returns game platforms
 def game_platforms(id):
     data = game_data(id)
@@ -89,6 +90,7 @@ def game_platforms(id):
         print(i)
     return platforms
 
+# Returns game stores
 def game_stores(id):
     url = base_url+f"/{id}/stores?key={rawg_key}"
     response = requests.get(url)
@@ -96,6 +98,7 @@ def game_stores(id):
     #print(data)
     return data
 
+# Returns the main game developer
 def game_developer(user_input):
     desired_id = game_id_grabber(user_input)
     desired_data = game_data(desired_id)
@@ -244,13 +247,12 @@ def ask_question(question):
             
             #print (second_response.choices[0].message.content)
             split_response = second_response.choices[0].message.content.split("_")
+            main_response = split_response[0]
             game_name = split_response[1]
-            return second_response.choices[0].message.content , game_name
+            return main_response, game_name
 
     else:
         print("DEFAULTED")
-        #print(response)
-        print(response.choices[0].message.content)
         return response.choices[0].message.content
 
 #test_input = input("Enter a game name:")

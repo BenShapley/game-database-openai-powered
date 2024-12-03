@@ -105,6 +105,7 @@ p{
     border: 3.199px solid #4CC8FF50;
     /* padding-top: 20px; */
     padding-left: 20px;
+    padding-right: 20px;
     transition: all .5s ease;
 }
 
@@ -153,7 +154,7 @@ p{
     border-radius: 50px;
     border: 5px solid #4CC8FF;
     /* padding-top: 20px; */
-    padding-left: 20px;
+    padding-left: 30px;
     padding-right: 50px;
     transition: all .5s ease;
 }
@@ -173,7 +174,7 @@ p{
     border-radius: 10px;
 }
 
-#large_search:hover{
+#large_search:focus{
     color: rgba(255, 255, 255, 1);
     border-radius: 10px;
 }

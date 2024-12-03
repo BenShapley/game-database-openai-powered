@@ -96,6 +96,11 @@ def game_stores(id):
     #print(data)
     return data
 
+def game_developer(user_input):
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_data(desired_id)
+    main_dev = desired_data["developers"][0]["name"]
+    return main_dev
 
 functions = [
 	{

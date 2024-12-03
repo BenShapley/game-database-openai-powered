@@ -13,13 +13,13 @@
 		background-attachment: fixed;">
 
 	<div class="navbar">
-		<a href="/"> <img id="logo" src="static/logo.png"> </a>
+		<a href="/"> <img id="logo" src="static/logo.png" alt="Project Logo & Home Button"> </a>
 		<form method="POST" action="/">
 			<!-- <label id="prompt">Question:</label> -->
 			<input id="search_bar" name=req_question type="text" value={{question}}><br><br>
 			<!-- <input type="submit" value="Submit!"><br><br> -->
 		</form>
-		<a href="/"> <img id="help" src="static/help_icon.png"> </a>
+		<a href="/"> <img id="help" src="static/help_icon.png" alt="Help Screen Icon"> </a>
 	  </div>
 	
 	<div class="main">
@@ -27,8 +27,8 @@
 		<h2>SEARCH ABOUT A GAME</h2>
 		<form method="POST" action="/">
 			<div class="search_container">
-				<input id="large_search" name=req_question type="text" value={{question}}><br><br>
-				<img src="static/search_icon.png" class="search_icon">
+				<input id="large_search" name=req_question type="text" value="Ask me about a game..."><br><br>
+				<img src="static/search_icon.png" class="search_icon" alt="Search Icon">
 			</div>
 		</form>
 	</div>

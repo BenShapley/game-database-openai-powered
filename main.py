@@ -215,7 +215,8 @@ def get_game_reviews(user_input):
     desired_data = game_ratings(desired_id)
     return f"""Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
-    where necessary. Please use HTML styling to spice it up!!!"""
+    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
+    make sure its visible."""
 
 # OpenAI question input and answer
 def ask_question(question):

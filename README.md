@@ -43,6 +43,10 @@ An OpenAI powered game database that allows you to look up games and find out wh
 
   - Ask the Bot what players think of a specific game for real community ratings and opinions
 
+* **Compare Games**
+
+  * Compare two games and see which game suits you more
+
 * **Custom Background**
 
   - Watch as the Webpage changes to the video game you are researching
@@ -81,7 +85,7 @@ Before trying to run this application, please ensure you install all of the corr
 
    Ensure that these are being read correctly by the bot.py script.
 
-   ![Dashboard](gh-assets/Dashboard.png)
+   ![Dashboard](gh-assets/dashboard.png)
 
    > **Note**
    >
@@ -120,12 +124,68 @@ Before trying to run this application, please ensure you install all of the corr
 
 If you are struggling with getting the correct data back, this may be down to your **prompt** wording.
 
-To ensure you are using proper prompts, please ensure you refer to the **Help Page** located on the top right hand side of the webpage.
+To ensure you are using proper prompts, please ensure you refer to the **Help Page** located on the top right hand side of the webpage. 
+
+Below are some **Prompt Examples**:
+
+
+
+**Descriptions**
+
+To find the description of a game, use prompts like:
+
+- *"What is the game Destiny 2?"*
+
+- *"Describe what Minecraft is"*
+
+**Reviews & Ratings**
+
+To get game reviews and ratings, use prompts like:
+
+- *"What do people think about Fall Guys?"*
+
+- *"Do people enjoy playing Dead by Daylight?"*
+
+**Subreddit**
+
+To check if a game has a subreddit, use prompts like:
+
+- *"Does The Casting of Frank Stone have a subreddit?"*
+
+- *"What is Fortnite's reddit?"*
+
+**Stores**
+
+To see where you can buy a game, use prompts like:
+
+- *"Where can I buy Still Wakes The Deep?"*
+
+- *"How much is Call of Duty Cold War?"*
+
+**Comparisons**
+
+To compare two games, use prompts like:
+
+- *"What do people prefer more? Elden Ring or Rainbow 6 Siege?"*
+
+- *"What game is better between Skyrim and Dark Souls?"*
+
+
+
+> **Note**
+>
+> Once you are discussing a particular game, you do not need to reference the title explicitly in the question again since OpenAI will remember the game you are referring to.
+>
+> For example, if you ask '*What is **Roblox**?*' you can then follow up by simply asking '*What do people think about **this** game?*'
+>
+> This allows for smooth and seamless conversations with a natural progression.
 
 
 
 
 ## Example Output
+
+![EG Page Banner](gh-assets/outputs-banner.png)
 
 **Soon**
 
@@ -133,7 +193,9 @@ To ensure you are using proper prompts, please ensure you refer to the **Help Pa
 
 ## Credits
 
-**Soon**
+![Credits Page Banner](gh-assets/credits-banner.png)
+
+This project was capable due to the power of OpenAI and the data provided by RAWG.
 
 Huge thanks to:
 

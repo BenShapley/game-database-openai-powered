@@ -19,8 +19,6 @@ An OpenAI powered game database that allows you to look up games and find out wh
 
 
 
-
-
 ## Key Features
 
 ![Key Features Banner](gh-assets/key-features-banner.png)
@@ -81,7 +79,9 @@ Before trying to run this application, please ensure you install all of the corr
 
    After cloning the repository to your desired location, please pip install all of the requirements to a virtual environment.
 
-   ```pip install -r requirements.txt```
+   ``` python
+   pip install -r requirements.txt
+   ```
 
 1) **Set up your Azure Key & Endpoint**:
 

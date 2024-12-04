@@ -15,7 +15,13 @@ messages = [
   please check the 'get_game_description' function to find it. If the user asks where you can buy a game
   that you dont think exists, please check the 'get_game_stores' function to find it. If the user
   asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function
-  to find it. Can you after your reponse put a verticle bar ('|') and then name the game we are talking about with 
+  to find it. If the user asks you about achievements of a game you dont think exists, please check the 'get_game_achievements'
+  function to find it. If the user asks you about the genre of a game you dont think exists, please check the 
+  'get_game_genres' function to find it. If the user asks you what platforms a game you dont think exists is on,
+  please check the 'get_game_platforms' to find it. If the user asks you about how well a game did/reviews
+  for a game you dont think exists, please use the 'get_game_reviews' function to find it. If the user
+  asks you to commpare two games you dont think exist, please use the 'compare_games' function to find it.
+  Can you after your reponse put a verticle bar ('|') and then name the game we are talking about with 
   title capitalisation."""},
 ]
 

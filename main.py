@@ -15,7 +15,7 @@ messages = [
   please check the 'get_game_description' function to find it. If the user asks where you can buy a game
   that you dont think exists, please check the 'get_game_stores' function to find it. If the user
   asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function
-  to find it. Can you after your reponse put an underscore (|) and then name the game we are talking about with 
+  to find it. Can you after your reponse put a verticle bar ('|') and then name the game we are talking about with 
   title capitalisation."""},
 ]
 
@@ -206,7 +206,8 @@ def get_game_description(user_input):
     return f"""The {user_input} game is described as {desired_data}.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
     and <br> breaks where necessary. Please use HTML styling to spice it up!!! Maybe use background colors with border styling or cool
-    text styling for example. Try to match the styling with the game theme though."""
+    text styling for example. Try to match the styling with the game theme though. Keep in mind, the background is BLACK and i want the
+    text always to be a white or LIGHT color. So keep the background dark as well."""
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):

@@ -99,6 +99,7 @@ def game_stores(id):
     #print(data)
     return data
 
+# Returns game genres
 def game_genres(id):
     data = game_data(id)
     desired_data = data["genres"]
@@ -109,6 +110,13 @@ def game_genres(id):
     if len(genres) > max_count:
         return genres[:max_count]
     return genres
+
+# Returns game achievements and amount
+def game_achievements(id):
+    url = base_url+f"/{id}/achievements?key={rawg_key}"
+    response = requests.get(url)
+    data = response.json()
+    return data["results"], data["count"]
 
 # Returns the main game developer
 def game_developer(user_input):
@@ -220,10 +228,29 @@ functions = [
 				"required": ["user_input"]
             }
         },
+        "type": "function",
+        "function": {
+            "name": "get_game_achievements",
+			"description": """Returns a list of achievements for the desired game.
+            An example would be someone asking 'What achievements does [name] have?' or
+            'How many achievements does [name] have?""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+            }
+        },
         "function": {
             "name": "compare_games",
 			"description": """Compares two games together to see how each one were recieved by the public
-            An example would be someone asking 'What game is better, [name] or [name]?'""",
+            An example would be someone asking 'What game is better, [name] or [name]?'
+            ONLY RUN THIS FUNCTION IF TWO DIFFERENT GAMES ARE REQUESTED. If one game is requested,
+            the 'get_game_reviews' would be better.""",
 			"parameters": {
 				"type": "object",
 				"properties": {
@@ -283,6 +310,7 @@ def get_game_reviews(user_input):
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
 
+# OpenAI function to return platforms
 def get_game_platforms(user_input):
     print("FETCHING PLATFORMS")
     desired_id = game_id_grabber(user_input)
@@ -292,6 +320,7 @@ def get_game_platforms(user_input):
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
 
+# OpenAI function to return game genres
 def get_game_genres(user_input):
     print("FETCHING GENRES")
     desired_id = game_id_grabber(user_input)
@@ -301,7 +330,9 @@ def get_game_genres(user_input):
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
 
+# OpenAI function to compare two different games
 def compare_games(user_input_x, user_input_y):
+    print(f"COMPARING {user_input_x} and {user_input_y}")
     desired_id_x = game_id_grabber(user_input_x)
     desired_id_y = game_id_grabber(user_input_y)
     desired_data_x = game_ratings(desired_id_x)
@@ -311,6 +342,16 @@ def compare_games(user_input_x, user_input_y):
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
+
+# OpenAI function to get game achievements
+def get_game_achievements(user_input):
+    print("FETCHING ACHIEVEMENTS")
+    desired_id = game_id_grabber(user_input)
+    achievements, count = game_achievements(desired_id)
+    return f"""The game {user_input} has {count} achievements. These achievements are {achievements}. I am putting these
+    achievements into a HTML document directly so please format this correctly. You must present the data using <p> and <li> when 
+    necessary (EMBEDD THIS PROPERLY INTO HTML). I want you to showcase three of the best achievements alongside embedding their 
+    image. Just keep in mind, the background is black so make sure its visible."""
 
 # OpenAI question input and answer
 def ask_question(question):
@@ -334,6 +375,7 @@ def ask_question(question):
             "get_game_reviews": get_game_reviews,
             "get_game_platforms": get_game_platforms,
             "get_game_genres": get_game_genres,
+            "get_game_achievements": get_game_achievements,
             "compare_games": compare_games
 		}
 

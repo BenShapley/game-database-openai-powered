@@ -53,6 +53,18 @@ An OpenAI powered game database that allows you to look up games and find out wh
 
   - Watch as the Webpage changes to the video game you are researching
 
+* **See Game Achievements**
+
+  * Find out what achievements a game has and see how difficult they are to achieve
+
+* **See Game Platforms**
+
+  * See what platforms you can play your desired game on
+
+* **Game Genres**
+
+  * See what categories your favourite game exists within
+
 * **Conversational Experience**
 
   - Have a conversation about the game and see what you find out!
@@ -178,6 +190,13 @@ To see what genres correspond to a game title, use prompts like:
 
 - "*"What genre is Silent Hill?"*"
 - "*What type of game is Gartic Phone?*"
+
+**Achievements**
+
+To see what achievements a game of choice has, use prompts like:
+
+- "*"What achievements does Far Cry 4 have?"*"
+- "*How many achievements does Halo Reach have?*"
 
 **Comparisons**
 

@@ -176,6 +176,22 @@ functions = [
 				"required": ["user_input"]
             }
         },
+        "type": "function",
+        "function": {
+            "name": "get_game_platforms",
+			"description": """Returns the platforms that you can play the desired game on.
+            An example would be someone asking 'What can I play [name] on?'""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+            }
+        },
         "function": {
             "name": "compare_games",
 			"description": """Compares two games together to see how each one were recieved by the public
@@ -239,6 +255,15 @@ def get_game_reviews(user_input):
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
 
+def get_game_platforms(user_input):
+    print("FETCHING PLATFORMS")
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_platforms(desired_id)
+    return f"""Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally.
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
+    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
+    make sure its visible."""
+
 def compare_games(user_input_x, user_input_y):
     desired_id_x = game_id_grabber(user_input_x)
     desired_id_y = game_id_grabber(user_input_y)
@@ -270,6 +295,7 @@ def ask_question(question):
             "get_game_stores" : get_game_stores,
             "get_game_reddit" : get_game_reddit,
             "get_game_reviews": get_game_reviews,
+            "get_game_platforms": get_game_platforms,
             "compare_games": compare_games
 		}
 

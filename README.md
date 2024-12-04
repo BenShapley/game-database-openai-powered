@@ -65,10 +65,11 @@ An OpenAI powered game database that allows you to look up games and find out wh
 
 Before trying to run this application, please ensure you install all of the correct libraries to a virtual environment.
 
-> **Note**
-> Please refer to the [**requirements.txt**] in the repository to install all of the correct and up-to-date libraries.
+0. **Clone Repository & Install Requirements**:
 
+   After cloning the repository to your desired location, please pip install all of the requirements to a virtual environment.
 
+   ```pip install -r requirements.txt```
 
 1) **Set up your Azure Key & Endpoint**:
 

@@ -40,13 +40,22 @@ h6{
 
 
 .help_section{
+    background-color: #000000;
+    border: 3.199px solid #4CC8FF;
+    border-radius: 25px;
+    padding: 20px;
     color: #ffffff;
     font-size: 15px;
 	font-family: "Inter";
     font-weight: normal;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
+.help_sections{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 125px;
+}
 
 #prompt{
 	color: #ffffff;
@@ -91,6 +100,7 @@ h6{
     z-index: 10;
     position: absolute;
 }
+
 
 #search_bar{
     width: 194.567px;

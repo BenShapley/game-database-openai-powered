@@ -382,8 +382,8 @@ def get_game_achievements(user_input):
     achievements, count = game_achievements(desired_id)
     return f"""The game {user_input} has {count} achievements. These achievements are {achievements}. I am putting these
     achievements into a HTML document directly so please format this correctly. You must present the data using <p> and <li> when 
-    necessary (EMBEDD THIS PROPERLY INTO HTML). I want you to showcase three of the best achievements alongside embedding their 
-    image. Just keep in mind, the background is black so make sure its visible."""
+    necessary (EMBEDD THIS PROPERLY INTO HTML SO THAT IT SHOWS IN <p> and <li>. No raw text allowed.). I want you to showcase three 
+    of the best achievements alongside embedding their  image. Just keep in mind, the background is black so make sure its visible."""
 
 def get_most_popular_game_by_year(user_input):
     print("GETTING POPULAR GAME")

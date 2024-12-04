@@ -65,8 +65,8 @@ ul, li{
 .absolutebackground {
     height:100vh;
     background-color: black;
-    opacity: 70%;
-    position: absolute;
+    opacity: .7;
+    position: fixed;
     top: 0;
     width:100vw;
     pointer-events: none;
@@ -81,6 +81,7 @@ ul, li{
     border: 0;
     border-bottom: 2px solid #4CC8FF;
     box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5);
+    z-index: 30;
   }
   
   .navbar #logo{

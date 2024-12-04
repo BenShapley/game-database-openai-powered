@@ -26,6 +26,7 @@ base_url = rawg_keys["base_url"]
 
 # Gets a games ID based on a user search
 def game_id_grabber(user_search):
+    print(user_search)
     modified_string = user_search.replace(" ", "%20")
     url = base_url+f"?key={rawg_key}&search={modified_string}"
     print(url)
@@ -204,7 +205,8 @@ def get_game_description(user_input):
     desired_data = game_description(desired_id)
     return f"""The {user_input} game is described as {desired_data}.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
-    and <br> breaks where necessary. Please use HTML styling to spice it up!!!"""
+    and <br> breaks where necessary. Please use HTML styling to spice it up!!! Maybe use background colors with border styling or cool
+    text styling for example. Try to match the styling with the game theme though."""
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):
@@ -213,7 +215,8 @@ def get_game_stores(user_input):
     desired_data = game_stores(desired_id)
     return f"""You can buy the game {user_input} in these stores: {desired_data}.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
-    and <br> breaks where necessary."""
+    and <li> lists where necessary so it displays. Please present these nicely and make it interesting by using some styling to spice 
+    it up!! Just keep in mind, the background is black so make sure it is visible."""
 
 # OpenAI function to return a game reddit if it exists
 def get_game_reddit(user_input):
@@ -222,7 +225,8 @@ def get_game_reddit(user_input):
     desired_data = game_reddit_url(desired_id)
     return f"""If the game {user_input} has a reddit, it may be here{desired_data}.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
-    and <br> breaks where necessary."""
+    and <br> breaks where necessary. Please present these nicely and make it interesting by using some styling to spice 
+    it up!! Just keep in mind, the background is black so make sure it is visible."""
 
 # OpenAI function to return reviews about a game
 def get_game_reviews(user_input):

@@ -13,8 +13,10 @@ An OpenAI powered game database that allows you to look up games and find out wh
   <a href="#how-to-use">How To Use</a> •
   <a href="#prompt-help">Prompt Help</a> •
   <a href="#example-output">Example Output</a> •
+  <a href="#known-bugs">Known Bugs</a> •
   <a href="#credits">Credits</a> 
 </p>
+
 
 
 
@@ -93,7 +95,7 @@ Before trying to run this application, please ensure you install all of the corr
 
 3. **Read your RAWG Key:**
 
-   Within your project directory, create a new folder called `keys` and create a new JSON file named `rawg_keys`.
+   Within the project directory, create a new folder called `keys` and create a new JSON file named `rawg_keys`.
    
    Copy paste the text below and replace `YOUR_KEY_HERE` with **your RAWG key**.
    
@@ -191,6 +193,33 @@ To compare two games, use prompts like:
 
 
 
+## Known Bugs
+
+![Bugs Page Banner](gh-assets/bugs-banner.png)
+
+Below are a list of known bugs and issues to avoid to make your user experience more smooth and streamlined:
+
+**1. Error 400 | Bad Request Error**
+
+- Occasionally, a prompt will send out a 400 Error and fail. If you encounter this error, please relaunch the flask app and ask your question again and it should run fine. If this error persists, please try and rephrase your prompt.
+
+**2. Unreadable Text**
+
+- Sometimes, an output may have both a white background and white text. If you run into this accessibility issue, please try and re-search the game.
+
+  OpenAI tries its best to curate a format that matches the games description and sometimes prioritises this over accessibility.
+  If the issue persists, re-search the game and add to the end '***Please make the text black and box white*.**'
+
+  ![Unreadable Text EG](gh-assets/white-text.png)
+
+**3. One Game Studio Showcased**
+
+- When comparing two games together, the site will often only show one the developer of the first game inputted. Please keep this in mind when comparing games.
+
+  ![One Game Studio](gh-assets/one-studio.png)
+
+
+
 ## Credits
 
 ![Credits Page Banner](gh-assets/credits-banner.png)
@@ -201,3 +230,4 @@ Huge thanks to:
 
 - [Azure](https://azure.microsoft.com/en-gb/pricing/purchase-options/azure-account/search?icid=free-search&ef_id=_k_CjwKCAiA3ZC6BhBaEiwAeqfvyjldSpYmnBiBxu3p14RMM4OA8yQiS7emMeiyQpGL3UymUj-DJfJwYxoCEGsQAvD_BwE_k_&OCID=AIDcmm3bvqzxp1_SEM__k_CjwKCAiA3ZC6BhBaEiwAeqfvyjldSpYmnBiBxu3p14RMM4OA8yQiS7emMeiyQpGL3UymUj-DJfJwYxoCEGsQAvD_BwE_k_&gad_source=1&gclid=CjwKCAiA3ZC6BhBaEiwAeqfvyjldSpYmnBiBxu3p14RMM4OA8yQiS7emMeiyQpGL3UymUj-DJfJwYxoCEGsQAvD_BwE)
 - [RAWG.io](https://rawg.io/)
+- [Kat Sullivan]()

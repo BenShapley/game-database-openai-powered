@@ -129,7 +129,7 @@ If you are struggling with getting the correct data back, this may be down to yo
 
 To ensure you are using proper prompts, please ensure you refer to the **Help Page** located on the top right hand side of the webpage. 
 
-Below are some **Prompt Examples**:
+Alternatively, below are some **Prompt Examples**:
 
 
 
@@ -164,6 +164,20 @@ To see where you can buy a game, use prompts like:
 - *"Where can I buy Still Wakes The Deep?"*
 
 - *"How much is Call of Duty Cold War?"*
+
+**Platforms**
+
+To see what platforms a game is available on, use prompts like:
+
+- "*"What platforms can I play RD2 on?"*"
+- "*What platforms are Minecraft on?*"
+
+**Genres**
+
+To see what genres correspond to a game title, use prompts like:
+
+- "*"What genre is Silent Hill?"*"
+- "*What type of game is Gartic Phone?*"
 
 **Comparisons**
 

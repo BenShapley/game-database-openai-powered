@@ -99,6 +99,17 @@ def game_stores(id):
     #print(data)
     return data
 
+def game_genres(id):
+    data = game_data(id)
+    desired_data = data["genres"]
+    genres = [i["name"] for i in desired_data]
+    max_count = 12
+    for i in genres:
+        print(i)
+    if len(genres) > max_count:
+        return genres[:max_count]
+    return genres
+
 # Returns the main game developer
 def game_developer(user_input):
     desired_id = game_id_grabber(user_input)
@@ -192,6 +203,23 @@ functions = [
 				"required": ["user_input"]
             }
         },
+        "type": "function",
+        "function": {
+            "name": "get_game_genres",
+			"description": """Returns the genres that correspond with the desired game.
+            An example would be someone asking 'What genre is [name]?' or
+            'What type of game is [name]?""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": "The video game title you are using to search"
+					}
+				},
+				"required": ["user_input"]
+            }
+        },
         "function": {
             "name": "compare_games",
 			"description": """Compares two games together to see how each one were recieved by the public
@@ -259,7 +287,16 @@ def get_game_platforms(user_input):
     print("FETCHING PLATFORMS")
     desired_id = game_id_grabber(user_input)
     desired_data = game_platforms(desired_id)
-    return f"""Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally.
+    return f"""Format the platforms ({desired_data}) of the game {user_input} by presenting it professionally.
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
+    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
+    make sure its visible."""
+
+def get_game_genres(user_input):
+    print("FETCHING GENRES")
+    desired_id = game_id_grabber(user_input)
+    desired_data = game_genres(desired_id)
+    return f"""Format the gebres ({desired_data}) of the game {user_input} by presenting it professionally.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
@@ -296,6 +333,7 @@ def ask_question(question):
             "get_game_reddit" : get_game_reddit,
             "get_game_reviews": get_game_reviews,
             "get_game_platforms": get_game_platforms,
+            "get_game_genres": get_game_genres,
             "compare_games": compare_games
 		}
 

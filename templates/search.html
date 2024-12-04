@@ -7,11 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="static/css/style_search.css">
 	<title>Search Page</title>
 </head>
-<body style="background-image: url({{background_image}});
-		background-size: 1920px 1080px; 
-		background-repeat: no-repeat; 
-		background-position: center center; 
-		background-attachment: fixed;">
+<body style="background-image: 
+    linear-gradient(to right, 
+        rgba(0,0,0,.75) 0%, 
+        rgba(0,0,0,0.5) 50%, 
+        rgba(0,0,0,0) 100%), 
+    url({{background_image}});
+	background-size: cover;
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-attachment: fixed;">
 	{% if show_absolute_background %}
 		<div class="absolutebackground"></div>
 	{% endif %}

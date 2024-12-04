@@ -63,6 +63,10 @@ An OpenAI powered game database that allows you to look up games and find out wh
 
   * See what categories your favourite game exists within
 
+* **Find Most Popular Games By Year**
+
+  * Find what the most popular game was during a specific year!
+
 * **Conversational Experience**
 
   - Have a conversation about the game and see what you find out!

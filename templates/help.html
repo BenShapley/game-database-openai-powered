@@ -7,12 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="static/css/style_help.css">
 	<title>Help Page</title>
 </head>
-<body style="background-image: url({{background_image}});
-		background-size: 1920px 1080px; 
-		background-repeat: no-repeat; 
-		background-position: center center; 
-		background-attachment: fixed;">
-
+<body style="background-image: 
+    linear-gradient(to right, 
+        rgba(0,0,0,.75) 0%, 
+        rgba(0,0,0,0.5) 50%, 
+        rgba(0,0,0,0) 100%), 
+    url({{background_image}});
+	background-size: cover;
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-attachment: fixed;">
 	<div class="navbar">
 		<a href="/"> <img id="logo" src="static/logo.png" alt="Project Logo & Home Button"> </a>
 		<form method="POST" action="/">
@@ -95,6 +99,15 @@
 				<div class="prompt_example">
 					<li>"What achievements does Far Cry 4 have?"</li>
 					<li>"How many achievements does Halo Reach have?"</li>
+				</div>
+			</div>
+			
+			<div class="help_section">
+				<h6>Popular Games by Year</h6>
+				<p>To search popular games by year, use prompts like:</p>
+				<div class="prompt_example">
+					<li>"What was the most popular game in 2018?"</li>
+					<li>"What games did people enjoy playing in 2023?"</li>
 				</div>
 			</div>
 		</div>

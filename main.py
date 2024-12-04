@@ -21,7 +21,8 @@ messages = [
   please check the 'get_game_platforms' to find it. If the user asks you about how well a game did/reviews
   for a game you dont think exists, please use the 'get_game_reviews' function to find it. If the user
   asks you to commpare two games you dont think exist, please use the 'compare_games' function to find it.
-  Can you after your reponse put a verticle bar ('|') and then name the game we are talking about with 
+  If the user asks you what the most popular game of a specific year was, please use the 'get_most_popular_game_by_year'
+  function to find it. Can you after your reponse put a verticle bar ('|') and then name the game we are talking about with 
   title capitalisation."""},
 ]
 
@@ -134,6 +135,14 @@ def game_developer(user_input):
         return main_dev
     else:
         return ""
+
+# Returns most popular game of a year
+def most_popular_game_by_year(date):
+    url = base_url+f"?key={rawg_key}&dates={date}&ordering=-added"
+    response = requests.get(url)
+    data = response.json()
+    popular_game = data["results"][0]
+    return popular_game
 
 functions = [
 	{
@@ -251,6 +260,23 @@ functions = [
 				"required": ["user_input"]
             }
         },
+        "type": "function",
+        "function": {
+            "name": "get_most_popular_game_by_year",
+			"description": """Returns the most popular game of a specific year.
+            An example would be someone asking 'What was the most popular game of [year]""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input": {
+						"type": "string",
+						"description": """The year the user is trying to search by.
+                        Format this like: '[YEAR]-01-01,[YEAR]-12-31'"""
+					}
+				},
+				"required": ["user_input"]
+            }
+        },
         "function": {
             "name": "compare_games",
 			"description": """Compares two games together to see how each one were recieved by the public
@@ -359,6 +385,13 @@ def get_game_achievements(user_input):
     necessary (EMBEDD THIS PROPERLY INTO HTML). I want you to showcase three of the best achievements alongside embedding their 
     image. Just keep in mind, the background is black so make sure its visible."""
 
+def get_most_popular_game_by_year(user_input):
+    print("GETTING POPULAR GAME")
+    desired_data = most_popular_game_by_year(user_input)
+    return f"""The most popular game within the year {user_input} was {desired_data}. I am putting this into a HTML document
+    directly so please format this correctly. You must present the data using <p> and <br> when necessary (EMBEDD THIS INTO
+    HTML). I want you to spice it up by using html styling!!"""
+
 # OpenAI question input and answer
 def ask_question(question):
     messages.append({"role": "user", "content": question})
@@ -382,6 +415,7 @@ def ask_question(question):
             "get_game_platforms": get_game_platforms,
             "get_game_genres": get_game_genres,
             "get_game_achievements": get_game_achievements,
+            "get_most_popular_game_by_year": get_most_popular_game_by_year,
             "compare_games": compare_games
 		}
 

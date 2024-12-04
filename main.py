@@ -174,6 +174,25 @@ functions = [
 				},
 				"required": ["user_input"]
             }
+        },
+        "function": {
+            "name": "compare_games",
+			"description": """Compares two games together to see how each one were recieved by the public
+            An example would be someone asking 'What game is better, [name] or [name]?'""",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"user_input_x": {
+						"type": "string",
+						"description": "The first video game title you are using to search"
+					},
+                    "user_input_y": {
+						"type": "string",
+						"description": "The second video game title you are using to search"
+					}
+				},
+				"required": ["user_input_x", "user_input_y"]
+            }
         }
 	}
 ]
@@ -186,9 +205,6 @@ def get_game_description(user_input):
     return f"""The {user_input} game is described as {desired_data}.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
     and <br> breaks where necessary. Please use HTML styling to spice it up!!!"""
-    # return f"""The {user_input} game is described as {desired_data}. I am putting this into my HTML project.
-    # I currently have a heading 1 and 2 so just format the description to make it look nice and professional and using
-    # proper HTML syntaxing"""
 
 # OpenAI function to return where a game can be bought
 def get_game_stores(user_input):
@@ -218,6 +234,17 @@ def get_game_reviews(user_input):
     where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
     make sure its visible."""
 
+def compare_games(user_input_x, user_input_y):
+    desired_id_x = game_id_grabber(user_input_x)
+    desired_id_y = game_id_grabber(user_input_y)
+    desired_data_x = game_ratings(desired_id_x)
+    desired_data_y = game_ratings(desired_id_y)
+    return f"""Format the ratings of ({desired_data_x}) of the game {user_input_x} by presenting it professionally. Then
+    contrast these ratings with {desired_data_y} of the game {user_input_y} to make a comprehensive comparision.
+    I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
+    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
+    make sure its visible."""
+
 # OpenAI question input and answer
 def ask_question(question):
     messages.append({"role": "user", "content": question})
@@ -237,7 +264,8 @@ def ask_question(question):
 			"get_game_description": get_game_description,
             "get_game_stores" : get_game_stores,
             "get_game_reddit" : get_game_reddit,
-            "get_game_reviews": get_game_reviews
+            "get_game_reviews": get_game_reviews,
+            "compare_games": compare_games
 		}
 
         messages.append(response_message)
@@ -245,7 +273,10 @@ def ask_question(question):
             function_name = gpt_tool.function.name
             function_to_call = available_functions[function_name]
             function_parameters = json.loads(gpt_tool.function.arguments)
-            function_response = function_to_call(function_parameters.get('user_input'))
+            if function_name == "compare_games":
+                function_response = function_to_call(function_parameters.get('user_input_x'), function_parameters.get('user_input_y'))
+            else:
+                function_response = function_to_call(function_parameters.get('user_input'))
             messages.append(
 				{
 					"tool_call_id": gpt_tool.id,

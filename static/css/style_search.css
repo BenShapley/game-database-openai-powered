@@ -52,6 +52,7 @@ ul, li{
     font-size: 20px;
 	font-family: "Inter";
     font-weight: normal;
+    margin: 20px;
 }
 
 #prompt{

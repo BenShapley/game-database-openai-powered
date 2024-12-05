@@ -34,7 +34,6 @@ base_url = rawg_keys["base_url"]
 
 # Gets a games ID based on a user search
 def game_id_grabber(user_search):
-    print(user_search)
     modified_string = user_search.replace(" ", "%20")
     url = base_url+f"?key={rawg_key}&search={modified_string}"
     print(url)
@@ -45,7 +44,6 @@ def game_id_grabber(user_search):
 # Returns game data for use
 def game_data(id):
     url = base_url+f"/{id}?key={rawg_key}"
-    print(url)
     response = requests.get(url)
     data = response.json()
     return data
@@ -61,8 +59,6 @@ def game_ratings(id):
     data = game_data(id)
     ratings = data["ratings"]
     ratings_data = [{"title": rating["title"], "percent": rating["percent"]} for rating in ratings]
-    for i in ratings_data:
-        print(i)
     return ratings_data
 
 # Returns game screenshots
@@ -71,12 +67,9 @@ def game_screenshots(user_input):
     url = base_url+f"/{id}/screenshots?key={rawg_key}"
     response = requests.get(url)
     data = response.json()
-    #print(data)
     screenshots = data["results"]
     i = random.randrange(0,len(screenshots))
     if screenshots:
-        # for sc in screenshots:
-        #     print(sc["image"])
         return screenshots[i]["image"]
     else:
         return ""
@@ -98,8 +91,6 @@ def game_platforms(id):
     data = game_data(id)
     game_platforms = data["parent_platforms"]
     platforms = [i["platform"]["name"] for i in game_platforms]
-    for i in platforms:
-        print(i)
     return platforms
 
 # Returns game stores
@@ -107,7 +98,6 @@ def game_stores(id):
     url = base_url+f"/{id}/stores?key={rawg_key}"
     response = requests.get(url)
     data = response.json()
-    #print(data)
     return data
 
 # Returns game genres
@@ -444,10 +434,7 @@ def ask_question(question):
 				model = "GPT-4",
 				messages=messages
 			)
-            print("SUCCESS")
-            #print(response)
-            
-            #print (second_response.choices[0].message.content)
+            print("SUCCESS")            
             split_response = second_response.choices[0].message.content.split("|")
             main_response = split_response[0]
             game_name = split_response[1]
@@ -456,8 +443,3 @@ def ask_question(question):
     else:
         print("DEFAULTED")
         return response.choices[0].message.content, ""
-    
-#test_input = input("Enter a game name:")
-#game_screenshots(test_input)
-#print(get_game_description(test_input))
-#ask_question(test_input)

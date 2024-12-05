@@ -93,7 +93,7 @@ Before trying to run this application, please ensure you install all of the corr
 
    After this, modify *main.py* to access these values and set them to the `api_key` and `azure_endpoint` variables.
 
-   > **Note**
+   > [!Note]
    >
    > By base, the Key & Endpoint are being read by the OS which can be defined within your command prompt. Keep these values secure and safe.
 2. **Set up your RAWG API Account:**
@@ -106,11 +106,11 @@ Before trying to run this application, please ensure you install all of the corr
 
    ![Dashboard](gh-assets/dashboard.png)
 
-   > **Note**
+   > [!Caution]
    >
    > Keep your RAWG Key private and secure
 
-3. **Read your RAWG Key:**
+2. **Read your RAWG Key:**
 
    Within the project directory, create a new folder called `keys` and create a new JSON file named `rawg_keys`.
 
@@ -136,7 +136,7 @@ Before trying to run this application, please ensure you install all of the corr
 
    
 
-4. **Run Flask:**
+3. **Run Flask:**
 
    Run the Flask app within your command prompt by typing `flask run`.
 
@@ -144,7 +144,7 @@ Before trying to run this application, please ensure you install all of the corr
    >
    > Ensure you have your virtual environment active when doing so
 
-5. **Explore Some Games:**
+4. **Explore Some Games:**
 
    Feel free to now look up some games and get the information you want!
 
@@ -220,12 +220,11 @@ To see what achievements a game of choice has, use prompts like:
 To compare two games, use prompts like:
 
 - *"What do people prefer more? Elden Ring or Rainbow 6 Siege?"*
-
 - *"What game is better between Skyrim and Dark Souls?"*
 
 
 
-> **Note**
+> [!Tip]
 >
 > Once you are discussing a particular game, you do not need to reference the title explicitly in the question again since OpenAI will remember the game you are referring to.
 >

@@ -85,10 +85,13 @@ def game_screenshots(user_input):
 def game_reddit_url(id):
     data = game_data(id)
     reddit_url = data["reddit_url"]
+    posts_url = base_url+f"/{id}/reddit?key={rawg_key}"
+    response = requests.get(posts_url)
+    recent_reddit_posts = response.json()
     if reddit_url:
-        return reddit_url
+        return reddit_url, recent_reddit_posts
     else:
-        return "No reddit"
+        return "No reddit", ""
 
 # Returns game platforms
 def game_platforms(id):
@@ -327,8 +330,8 @@ def get_game_stores(user_input):
 def get_game_reddit(user_input):
     print("FETCHING REDDIT")
     desired_id = game_id_grabber(user_input)
-    desired_data = game_reddit_url(desired_id)
-    return f"""If the game {user_input} has a reddit, it may be here{desired_data}.
+    reddit_url, recent_posts = game_reddit_url(desired_id)
+    return f"""If the game {user_input} has a reddit, it may be here{reddit_url}. Showcase 3 of the bests posts too {recent_posts}.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> paragraphs 
     and <br> breaks where necessary. Please present these nicely and make it interesting by using some styling to spice 
     it up!! Just keep in mind, the background is black so make sure it is visible."""

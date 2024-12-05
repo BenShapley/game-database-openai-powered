@@ -254,7 +254,7 @@ To compare two games, use prompts like:
 
 **Stores / Where to Buy**
 
-![Stores / Where to Buy](gh-assets/screenshots/stores.png)
+![Stores / Where to Buy](gh-assets/screenshots/Stores.png)
 
 **Platforms**
 

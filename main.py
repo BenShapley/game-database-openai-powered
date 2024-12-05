@@ -343,8 +343,8 @@ def get_game_reviews(user_input):
     desired_data = game_ratings(desired_id)
     return f"""Format the ratings ({desired_data}) of the game {user_input} by presenting it professionally.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
-    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
-    make sure its visible."""
+    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Format the data into graphs or circle fills to represent
+    the data. Just keep in mind, the background is black so make sure its visible."""
 
 # OpenAI function to return platforms
 def get_game_platforms(user_input):
@@ -353,8 +353,8 @@ def get_game_platforms(user_input):
     desired_data = game_platforms(desired_id)
     return f"""Format the platforms ({desired_data}) of the game {user_input} by presenting it professionally.
     I am putting this directly into a HTML document so please format this correctly. You must present the data using <p> and <li>
-    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Just keep in mind, the background is black so
-    make sure its visible."""
+    where necessary. Please use HTML styling to spice it up!!! For eg, use colours! Put the genres themselves into blocks to look cool
+    Just keep in mind, the background is black so make sure its visible."""
 
 # OpenAI function to return game genres
 def get_game_genres(user_input):

@@ -13,10 +13,10 @@ An OpenAI powered game database that allows you to look up games and find out wh
   <a href="#how-to-use">How To Use</a> •
   <a href="#prompt-help">Prompt Help</a> •
   <a href="#example-output">Example Output</a> •
+  <a href="#purpose">Project Purpose</a> •
   <a href="#known-bugs">Known Bugs</a> •
   <a href="#credits">Credits</a> 
 </p>
-
 
 
 ## Key Features
@@ -271,6 +271,22 @@ To compare two games, use prompts like:
 **Comparing Games**
 
 ![Comparing Games](gh-assets/screenshots/comparison.png)
+
+
+
+## Purpose
+
+![Purpose Banner](gh-assets/purpose-banner.png)
+
+This OpenAI x RAWG project was set as part of the CTA Program with WPP. I had a week and a half to develop a Flask application that integrated OpenAI alongside another API of choice to allow AI to access real-time data that it may not have known about.
+
+The purpose of this project was to showcase how OpenAI could be integrated into a website to allow for a customisable browsing experience. In this case, I merged the OpenAI API with the RAWG API to create a game database that alters based on the game title that the user is searching.
+
+Another powerful benefit to the integration of OpenAI within the confines of a website is the conversational tone that it allows the user to bring. For example, instead of looking up a specific games description, then re-searching the same title to find it's reviews, OpenAI remembers what game was most recently searched and thus can infer what you are searching for.
+
+I also experimented a lot with pushing OpenAI to format itself when presenting information. The power of this exists within the time saved for the web developer.
+
+This project was a fun learning experience whilst also demonstrating the future of real-time personalised websites.
 
 
 

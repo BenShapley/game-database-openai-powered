@@ -242,33 +242,49 @@ To compare two games, use prompts like:
 
 **Asking about a game**
 
+*Prompt: "what is a liars bar game about?"*
+
 ![About A Game](gh-assets/screenshots/description.png)
 
 **Reviews & Ratings**
+
+*Prompt: "what did people think about still wakes the deep?"*
 
 ![Reviews & Ratings](gh-assets/screenshots/reviews.png)
 
 **Communities & Subreddits**
 
+*Prompt: "what is elden rings reddit?"*
+
 ![Communities & Subreddits](gh-assets/screenshots/reddits.png)
 
 **Stores / Where to Buy**
+
+*Prompt: "where can i buy The Casting of Frank Stone?"*
 
 ![Stores / Where to Buy](gh-assets/screenshots/Stores.png)
 
 **Platforms**
 
+*Prompt: "What platforms can I play Destiny 2 on?"*
+
 ![Platforms](gh-assets/screenshots/platforms.png)
 
 **Game Genres**
+
+*Prompt: "what genre is titanfall 2"*
 
 ![Game Genres](gh-assets/screenshots/genres.png)
 
 **Achievements**
 
+*Prompt: "what achievements does call of duty blacks ops 2 have?"*
+
 ![Achievements](gh-assets/screenshots/achievements.png)
 
 **Comparing Games**
+
+*Prompt: "what do people prefer more, dead by daylight or outlast the trials?"*
 
 ![Comparing Games](gh-assets/screenshots/comparison.png)
 

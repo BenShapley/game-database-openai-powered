@@ -113,16 +113,29 @@ Before trying to run this application, please ensure you install all of the corr
 3. **Read your RAWG Key:**
 
    Within the project directory, create a new folder called `keys` and create a new JSON file named `rawg_keys`.
-   
+
    Copy paste the text below and replace `YOUR_KEY_HERE` with **your RAWG key**.
-   
+
    ```json
    {
        "client_key": "YOUR_KEY_HERE",
        "base_url": "https://api.rawg.io/api/games"
    }
    ```
+
+   ```cmd
+   └── rawg-openai-project/
+       ├── venv/...
+       ├── static/...
+       ├── templates/...
+       ├── app.py
+       ├── main.py
+       └── keys/
+           └── rawg_keys.json
+   ```
+
    
+
 4. **Run Flask:**
 
    Run the Flask app within your command prompt by typing `flask run`.
@@ -227,7 +240,37 @@ To compare two games, use prompts like:
 
 ![EG Page Banner](gh-assets/outputs-banner.png)
 
-**Soon**
+**Asking about a game**
+
+![About A Game](gh-assets/NAME.png)
+
+**Reviews & Ratings**
+
+![Reviews & Ratings](gh-assets/NAME.png)
+
+**Communities & Subreddits**
+
+![Communities & Subreddits](gh-assets/NAME.png)
+
+**Stores / Where to Buy**
+
+![Stores / Where to Buy](gh-assets/NAME.png)
+
+**Platforms**
+
+![Platforms](gh-assets/NAME.png)
+
+**Game Genres**
+
+![Game Genres](gh-assets/NAME.png)
+
+**Achievements**
+
+![Achievements](gh-assets/NAME.png)
+
+**Comparing Games**
+
+![Comparing Games](gh-assets/NAME.png)
 
 
 

@@ -22,8 +22,9 @@ messages = [
   for a game you dont think exists, please use the 'get_game_reviews' function to find it. If the user
   asks you to commpare two games you dont think exist, please use the 'compare_games' function to find it.
   If the user asks you what the most popular game of a specific year was, please use the 'get_most_popular_game_by_year'
-  function to find it. Can you after your reponse put a verticle bar ('|') and then name the game we are talking about with 
-  title capitalisation."""},
+  function to find it. Please make sure you format all of the returns so that it can go directly into a HTML page.
+  This means no raw text, always wrapped in something like <p> for e.g. Can you after your reponse put a verticle bar ('|') 
+  and then name the game we are talking about with title capitalisation, make sure you do this."""},
 ]
 
 with open("keys/rawg_keys.json", "r") as rawg_files:
@@ -452,7 +453,7 @@ def ask_question(question):
     else:
         print("DEFAULTED")
         return response.choices[0].message.content, ""
-
+    
 #test_input = input("Enter a game name:")
 #game_screenshots(test_input)
 #print(get_game_description(test_input))

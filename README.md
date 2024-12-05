@@ -254,15 +254,15 @@ To compare two games, use prompts like:
 
 **Stores / Where to Buy**
 
-![Stores / Where to Buy](gh-assets/NAME.png)
+![Stores / Where to Buy](gh-assets/screenshots/stores.png)
 
 **Platforms**
 
-![Platforms](gh-assets/NAME.png)
+![Platforms](gh-assets/screenshots/platforms.png)
 
 **Game Genres**
 
-![Game Genres](gh-assets/NAME.png)
+![Game Genres](gh-assets/screenshots/genres.png)
 
 **Achievements**
 

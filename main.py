@@ -1,8 +1,6 @@
 import json
-import requests
 from openai import AzureOpenAI
 import os
-import random
 import utils
 
 client = AzureOpenAI(
@@ -161,6 +159,7 @@ functions = [
 				"required": ["user_input"]
             }
         },
+        "type": "function",
         "function": {
             "name": "compare_games",
 			"description": """Compares two games together to see how each one were recieved by the public
@@ -187,6 +186,7 @@ functions = [
 
 # OpenAI function to return a game description
 def get_game_description(user_input):
+    print(user_input)
     print("FETCHING DESCRIPTION")
     desired_id = utils.game_id_grabber(user_input)
     desired_data = utils.game_description(desired_id)
@@ -289,6 +289,8 @@ def ask_question(question):
 
     response_message = response.choices[0].message
     gpt_tools = response.choices[0].message.tool_calls
+
+    print(response_message)
 
     if gpt_tools:
         available_functions = {

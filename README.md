@@ -242,15 +242,15 @@ To compare two games, use prompts like:
 
 **Asking about a game**
 
-![About A Game](gh-assets/NAME.png)
+![About A Game](gh-assets/screenshots/description.png)
 
 **Reviews & Ratings**
 
-![Reviews & Ratings](gh-assets/NAME.png)
+![Reviews & Ratings](gh-assets/screenshots/reviews.png)
 
 **Communities & Subreddits**
 
-![Communities & Subreddits](gh-assets/NAME.png)
+![Communities & Subreddits](gh-assets/screenshots/reddits.png)
 
 **Stores / Where to Buy**
 
@@ -266,11 +266,11 @@ To compare two games, use prompts like:
 
 **Achievements**
 
-![Achievements](gh-assets/NAME.png)
+![Achievements](gh-assets/screenshots/achievements.png)
 
 **Comparing Games**
 
-![Comparing Games](gh-assets/NAME.png)
+![Comparing Games](gh-assets/screenshots/comparison.png)
 
 
 

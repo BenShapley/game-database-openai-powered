@@ -11,7 +11,10 @@ import utils
 client = AzureOpenAI(
     api_key = os.getenv("AZURE_KEY"),
     azure_endpoint = os.getenv("AZURE_ENDPOINT"),
-    api_version = "2023-10-01-preview"
+    #2024-07-15 (?)
+    #2024-10-21
+    #2023-10-01-preview (BASE)
+    api_version = "2024-10-21"
 )
 
 messages = [
@@ -25,8 +28,11 @@ messages = [
   please check the 'get_game_platforms' to find it. If the user asks you about how well a game did/reviews
   for a game you dont think exists, please use the 'get_game_reviews' function to find it. If the user
   asks you to commpare two games you dont think exist, please use the 'compare_games' function to find it.
-  If the user asks you what the most popular game of a specific year was, please use the 'get_most_popular_game_by_year'
-  function to find it. Please make sure you format all of the returns so that it can go directly into a HTML page.
+  It is mandatory that you use the correct required parameter for the function you are using. Don’t make assumptions about what 
+  values to plug into functions. If the function is 'compare_games' use the parameters 'user_input_x' and 'user_input_y'
+  else any other function use the parameter 'user_input'.
+  If the user asks you what the most popular game of a specific year was, please use the 
+  'get_most_popular_game_by_year' function to find it. Please make sure you format all of the returns so that it can go directly into a HTML page.
   This means no raw text, always wrapped in something like <p> for e.g. Can you after your reponse put a verticle bar ('|') 
   and then name the game we are talking about with title capitalisation, make sure you do this."""},
 ]
@@ -43,7 +49,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -59,7 +65,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -75,7 +81,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -91,7 +97,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -107,7 +113,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -124,7 +130,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -141,7 +147,7 @@ functions = [
 				"properties": {
 					"user_input": {
 						"type": "string",
-						"description": "The video game title you are using to search"
+						"description": "The video game title you are using to search. Use this paramater for this function ('user_input')"
 					}
 				},
 				"required": ["user_input"]
@@ -176,11 +182,11 @@ functions = [
 				"properties": {
 					"user_input_x": {
 						"type": "string",
-						"description": "The first video game title you are using to search"
+						"description": "When comparing two different games, this is the first video game title you are using to search"
 					},
                     "user_input_y": {
 						"type": "string",
-						"description": "The second video game title you are using to search"
+						"description": "When comparing two different games, this is the second video game title you are using to search"
 					}
 				},
 				"required": ["user_input_x", "user_input_y"]

@@ -1,3 +1,8 @@
+"""
+Utils script to get extract relevant data using the RAWG API.
+Author: Ben Shapley
+"""
+
 import json
 import requests
 import random

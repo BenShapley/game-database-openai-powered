@@ -1,3 +1,8 @@
+"""
+Main Python file that runs the AZURE client and pulls from the Utils script.
+Author: Ben Shapley
+"""
+
 import json
 from openai import AzureOpenAI
 import os

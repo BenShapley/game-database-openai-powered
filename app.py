@@ -1,3 +1,8 @@
+"""
+Flask App that hosts and posts to the website
+Author: Ben Shapley
+"""
+
 from flask import Flask, render_template, request
 import main
 import utils

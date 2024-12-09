@@ -156,7 +156,9 @@ Before trying to run this application, please ensure you install all of the corr
 
 If you are struggling with getting the correct data back, this may be down to your **prompt** wording.
 
-To ensure you are using proper prompts, please ensure you refer to the **Help Page** located on the top right hand side of the webpage. 
+To ensure you are using proper prompts, please ensure you refer to the **Help Page** located on the top right hand side of the webpage:
+
+![Help Page](gh-assets/help-page.png)
 
 Alternatively, below are some **Prompt Examples**:
 

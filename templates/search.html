@@ -37,8 +37,18 @@
 	</div>
 
 	<div class="refresh_button">
-		<a href="/"> <img src="static/refresh_icon.png" alt="Refresh Button"> </a>
+		<a href="#" onclick="searchAgain(); return false;">
+			<img src="static/refresh_icon.png" alt="Refresh Button">
+		</a>
 		</div>
+
+	<script>
+		function searchAgain() {
+    		document.getElementById('search_bar').value = "{{question}}";
+			$('.searching').show();
+   			document.querySelector('form').submit();
+			}
+	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {

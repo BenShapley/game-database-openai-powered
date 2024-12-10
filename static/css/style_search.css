@@ -9,7 +9,6 @@ body {
 }
 
 h1{
-	/* padding: 10px; */
 	color: #ffffff;
     font-size: 40px;
 	font-family: "Inter";
@@ -40,7 +39,6 @@ h6{
 }
 
 p{
-	/* padding: 10px; */
 	color: #ffffff;
     font-size: 20px;
 	font-family: "Inter";
@@ -56,7 +54,6 @@ ul, li{
 }
 
 #prompt{
-    /* padding: 10px; */
 	color: #ffffff;
 	font-family: sans-serif;
 	text-transform: capitalize;
@@ -97,7 +94,6 @@ ul, li{
     display: block;
     color: #f2f2f2;
     text-align: center;
-    /* padding: 14px 16px; */
     padding-top: 22px;
     text-decoration: none;
   }
@@ -118,7 +114,6 @@ ul, li{
     color: rgba(255, 255, 255, 0.285);
     border-radius: 27.192px;
     border: 3.199px solid #4CC8FF;
-    /* padding-top: 20px; */
     padding-left: 20px;
     padding-right: 20px;
     transition: all .5s ease;
@@ -200,7 +195,6 @@ ul, li{
       }
 
 h3{
-	/* padding: 10px; */
 	color: #ffffff;
     font-size: 50px;
     margin: 0px;

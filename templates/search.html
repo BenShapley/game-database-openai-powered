@@ -34,7 +34,6 @@
 		<h1>{{game}}</h1>
 		<h2>By {{developer}}</h2>
 		{{chatbot_response | safe}}
-		<!-- <p>{{chatbot_response}}</p> -->
 	</div>
 
 	<div class="refresh_button">
@@ -44,8 +43,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('form').on('submit', function() {
-				$('.searching').show(); // Show the loading element
-				return true; // Allow the form to submit
+				$('.searching').show();
+				return true;
 			});
 		});
 		</script>

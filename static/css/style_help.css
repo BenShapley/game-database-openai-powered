@@ -88,7 +88,6 @@ h6{
     display: block;
     color: #f2f2f2;
     text-align: center;
-    /* padding: 14px 16px; */
     padding-top: 22px;
     text-decoration: none;
   }
@@ -110,7 +109,6 @@ h6{
     color: rgba(255, 255, 255, 0.5);
     border-radius: 27.192px;
     border: 3.199px solid #4CC8FF;
-    /* padding-top: 20px; */
     padding-left: 20px;
     padding-right: 20px;
     transition: all .5s ease;
@@ -188,7 +186,6 @@ h6{
     }
 
 #p_search{
-	/* padding: 10px; */
 	color: #4CC8FF;
     font-size: 20px;
 	font-family: "Inter";

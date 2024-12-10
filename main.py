@@ -11,9 +11,6 @@ import utils
 client = AzureOpenAI(
     api_key = os.getenv("AZURE_KEY"),
     azure_endpoint = os.getenv("AZURE_ENDPOINT"),
-    #2024-07-15 (?)
-    #2024-10-21
-    #2023-10-01-preview (BASE)
     api_version = "2024-10-21"
 )
 

@@ -15,7 +15,6 @@ body {
     padding-right: 80px;
     z-index: 10;
     height: 80vh;
-    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +22,6 @@ body {
 }
 
 h1{
-	/* padding: 10px; */
 	color: #ffffff;
     font-size: 68px;
     margin: 0px;
@@ -55,7 +53,6 @@ h2{
 }
 
 p{
-	/* padding: 10px; */
 	color: #ffffff;
 	font-family: "Inter";
     font-weight: lighter;
@@ -65,7 +62,6 @@ p{
 }
 
 #prompt{
-    /* padding: 10px; */
 	color: #ffffff;
 	font-family: sans-serif;
 	text-transform: capitalize;
@@ -96,7 +92,6 @@ p{
     display: block;
     color: #f2f2f2;
     text-align: center;
-    /* padding: 14px 16px; */
     padding-top: 22px;
     text-decoration: none;
   }
@@ -108,7 +103,6 @@ p{
     color: rgba(255, 255, 255, 0.285);
     border-radius: 27.192px;
     border: 3.199px solid #4CC8FF50;
-    /* padding-top: 20px; */
     padding-left: 20px;
     padding-right: 20px;
     transition: all .5s ease;
@@ -158,7 +152,6 @@ p{
     color: rgba(255, 255, 255, 0.285);
     border-radius: 50px;
     border: 5px solid #4CC8FF;
-    /* padding-top: 20px; */
     padding-left: 30px;
     padding-right: 50px;
     transition: all .5s ease;
@@ -184,23 +177,6 @@ p{
     border-radius: 10px;
     border: 7.5px solid #4CC8FF;
 }
-
-/* .searching{
-    margin-top: 50px;
-    padding-top: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
-    z-index: 10;
-    height: 80vh;
-    /* position: fixed; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /* transform: translate(-50%, -50%); */
-    /* z-index: 15; */
-    
-/* }  */
 
 .searching {
     display: none;
@@ -238,7 +214,6 @@ p{
       }
 
 h3{
-	/* padding: 10px; */
 	color: #ffffff;
     font-size: 50px;
     margin: 0px;
@@ -255,4 +230,6 @@ h3{
 
 #p_search{
     color: #4CC8FF;
+    font-weight: normal;
+    font-size: 20px;
 }

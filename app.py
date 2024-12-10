@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return render_template('index.html', question="Search...", background_image="static/default_background.png")
+	return render_template('index.html', question="Search...", background_image="static/default_background.png", searching=False)
 
 @app.route('/', methods=['POST'])
 def index_post():
@@ -20,7 +20,7 @@ def index_post():
 	get_image = utils.game_screenshots(game_name)
 	dev = utils.game_developer(game_name)
 	return render_template('search.html', question=user_question, chatbot_response=chatbot_response, background_image=get_image, 
-						game=game_name, show_absolute_background=True, developer=dev) 
+						game=game_name, show_absolute_background=True, developer=dev, searching=False) 
 
 @app.route('/help')
 def index_help():

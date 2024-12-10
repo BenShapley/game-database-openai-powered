@@ -203,11 +203,12 @@ p{
 /* }  */
 
 .searching {
+    display: none;
     top: 0;
     width:100vw;
     pointer-events: none;
     height:100vh;
-    background-color: #000000a1;
+    background-color: #00000048;
     backdrop-filter: blur(20px);
     position: fixed;
     z-index: 19; 
@@ -220,7 +221,7 @@ p{
 .thinking-icon {
     width: 50px;
     height: 50px; 
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-top: 60px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;

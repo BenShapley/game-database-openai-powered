@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<title>Game Database</title>
 </head>
 <body style="background-image: url({{background_image}});
@@ -34,7 +35,17 @@
 		</form>
 	</div>
 
-	<div class="searching">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('form').on('submit', function() {
+		    $('.searching').show();
+		    return true;
+		});
+	});
+	</script>
+
+	<div class="searching" style="display: none;">
 		<img src="static/searching_icon.png" alt="Searching Icon" class="thinking-icon">
 		<h3>THINKING</h3>
 		<p>ORACLE IS THINKING ABOUT YOUR GAME</p>

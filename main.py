@@ -337,10 +337,13 @@ def ask_question(question):
 				model = "GPT-4",
 				messages=messages
 			)
-            print("SUCCESS")            
+            print("SUCCESS")
             split_response = second_response.choices[0].message.content.split("|")
             main_response = split_response[0]
-            game_name = split_response[1]
+            if len(split_response) >= 2:
+                game_name = split_response[1]
+            else:
+                game_name = "No Game Name"
             return main_response, game_name
 
     else:

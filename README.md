@@ -130,6 +130,7 @@ Before trying to run this application, please ensure you install all of the corr
        ├── templates/...
        ├── app.py
        ├── main.py
+       ├── utils.py
        └── keys/
            └── rawg_keys.json
    ```

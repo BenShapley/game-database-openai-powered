@@ -252,3 +252,7 @@ h3{
 	text-transform: capitalize;
     text-shadow: 0px 18px 11.5px #00000015;
 }
+
+#p_search{
+    color: #4CC8FF;
+}

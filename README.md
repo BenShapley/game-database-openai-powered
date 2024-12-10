@@ -247,25 +247,25 @@ To compare two games, use prompts like:
 
 **Asking about a game**
 
-*Prompt: "what is a liars bar game about?"*
+*Prompt: "what is roblox?"*
 
 ![About A Game](gh-assets/screenshots/description.png)
 
 **Reviews & Ratings**
 
-*Prompt: "what did people think about still wakes the deep?"*
+*Prompt: "what did people think about elden ring?"*
 
 ![Reviews & Ratings](gh-assets/screenshots/reviews.png)
 
 **Communities & Subreddits**
 
-*Prompt: "what is elden rings reddit?"*
+*Prompt: "does destiny 2 have a reddit?"*
 
 ![Communities & Subreddits](gh-assets/screenshots/reddits.png)
 
 **Stores / Where to Buy**
 
-*Prompt: "where can i buy The Casting of Frank Stone?"*
+*Prompt: "where can i buy roblox?"*
 
 ![Stores / Where to Buy](gh-assets/screenshots/Stores.png)
 
@@ -283,13 +283,13 @@ To compare two games, use prompts like:
 
 **Achievements**
 
-*Prompt: "what achievements does call of duty blacks ops 2 have?"*
+*Prompt: "does destiny 2 have any achievements?"*
 
 ![Achievements](gh-assets/screenshots/achievements.png)
 
 **Comparing Games**
 
-*Prompt: "what do people prefer more, dead by daylight or outlast the trials?"*
+*Prompt: "what do people prefer more, roblox or minecraft?"*
 
 ![Comparing Games](gh-assets/screenshots/comparison.png)
 
@@ -317,9 +317,11 @@ This project was a fun learning experience whilst also demonstrating the future 
 
 Below are a list of known bugs and issues to avoid to make your user experience more smooth and streamlined:
 
-**1. Error 400 | Bad Request Error**
+**1. Refresh Prompt**
 
-- Occasionally, a prompt will send out a 400 Error and fail. If you encounter this error, please relaunch the flask app and ask your question again and it should run fine. If this error persists, please try and rephrase your prompt.
+![Refresh Button](gh-assets/refresh-button.png)
+
+- When using the refresh prompt button, your page layout will alter alongside the page information about your desired page. However, sometimes the game title, developer and background will be defaulted to nothing. This is due to ChatGPT no longer calling the GPT Tool because it 'knows' what the game is due to the message history being stored. If this is the case, try and re-search your prompt or hit the refresh button again.
 
 **2. Unreadable Text**
 
@@ -348,7 +350,7 @@ Huge thanks to:
 
 - [Azure](https://azure.microsoft.com/en-gb/pricing/purchase-options/azure-account/search?icid=free-search&ef_id=_k_CjwKCAiA3ZC6BhBaEiwAeqfvyjldSpYmnBiBxu3p14RMM4OA8yQiS7emMeiyQpGL3UymUj-DJfJwYxoCEGsQAvD_BwE_k_&OCID=AIDcmm3bvqzxp1_SEM__k_CjwKCAiA3ZC6BhBaEiwAeqfvyjldSpYmnBiBxu3p14RMM4OA8yQiS7emMeiyQpGL3UymUj-DJfJwYxoCEGsQAvD_BwE_k_&gad_source=1&gclid=CjwKCAiA3ZC6BhBaEiwAeqfvyjldSpYmnBiBxu3p14RMM4OA8yQiS7emMeiyQpGL3UymUj-DJfJwYxoCEGsQAvD_BwE)
 - [RAWG.io](https://rawg.io/)
-- [Kat Sullivan]()
+- [Kat Sullivan](https://github.com/katsully/)
 
 
 

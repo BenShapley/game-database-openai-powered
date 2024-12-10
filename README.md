@@ -251,6 +251,12 @@ To compare two games, use prompts like:
 
 ![About A Game](gh-assets/screenshots/description.png)
 
+**Most Popular Game by Year**
+
+*Prompt: "what was the most popular game in 2024?"*
+
+![Most Popular Game By Year](gh-assets/screenshots/year.png)
+
 **Reviews & Ratings**
 
 *Prompt: "what did people think about elden ring?"*

@@ -113,6 +113,7 @@ def game_developer(user_input):
 # Returns most popular game of a year
 def most_popular_game_by_year(date):
     url = base_url+f"?key={rawg_key}&dates={date}&ordering=-added"
+    print(url)
     response = requests.get(url)
     data = response.json()
     popular_game = data["results"][0]

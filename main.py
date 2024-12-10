@@ -29,7 +29,10 @@ messages = [
   values to plug into functions. If the function is 'compare_games' use the parameters 'user_input_x' and 'user_input_y'
   else any other function use the parameter 'user_input'.
   If the user asks you what the most popular game of a specific year was, please use the 
-  'get_most_popular_game_by_year' function to find it. Please make sure you format all of the returns so that it can go directly into a HTML page.
+  'get_most_popular_game_by_year' function to find it & Make sure you use the correct input for this function 
+  (Format this like: '[YEAR]-01-01,[YEAR]-12-31'. In other words, if the user says 'What was the most popular game of 2022?', present 
+  the input as '2022-01-01,2022-12-31'.)
+  Please make sure you format all of the returns so that it can go directly into a HTML page.
   This means no raw text, always wrapped in something like <p> for e.g. Can you after your reponse put a verticle bar ('|') 
   and then name the game we are talking about with title capitalisation, make sure you do this."""},
 ]
@@ -154,14 +157,19 @@ functions = [
         "function": {
             "name": "get_most_popular_game_by_year",
 			"description": """Returns the most popular game of a specific year.
-            An example would be someone asking 'What was the most popular game of [year]""",
+            An example would be someone asking 'What was the most popular game of [year]
+            Format the input like: '[YEAR]-01-01,[YEAR]-12-31'. In other words,
+            if the user says 'What was the most popular game of 2022?', present
+            the input as '2022-01-01,2022-12-31'.""",
 			"parameters": {
 				"type": "object",
 				"properties": {
 					"user_input": {
 						"type": "string",
 						"description": """The year the user is trying to search by.
-                        Format this like: '[YEAR]-01-01,[YEAR]-12-31'"""
+                        Format this like: '[YEAR]-01-01,[YEAR]-12-31'. In other words,
+                        if the user says 'What was the most popular game of 2022?', present
+                        the input as '2022-01-01,2022-12-31'."""
 					}
 				},
 				"required": ["user_input"]
@@ -289,7 +297,7 @@ def ask_question(question):
     messages.append({"role": "user", "content": question})
     
     response = client.chat.completions.create(
-		model = "GPT-4",
+		model = "gpt-4-32k",
 		messages = messages,
 		tools = functions,
 		tool_choice = "auto"
@@ -331,7 +339,7 @@ def ask_question(question):
 				}
 			)
             second_response = client.chat.completions.create(
-				model = "GPT-4",
+				model = "gpt-4-32k",
 				messages=messages
 			)
             print("SUCCESS")

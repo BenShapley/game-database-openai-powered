@@ -147,6 +147,8 @@ Before trying to run this application, please ensure you install all of the corr
 5. **Explore Some Games:**
 
    Feel free to now look up some games and get the information you want!
+   
+   ![search](gh-assets/search.png)
 
 
 

@@ -34,7 +34,7 @@ messages = [
   the input as '2022-01-01,2022-12-31'.)
   Please make sure you format all of the returns so that it can go directly into a HTML page.
   This means no raw text, always wrapped in something like <p> for e.g. Can you after your reponse put a verticle bar ('|') 
-  and then name the game we are talking about with title capitalisation, make sure you do this."""},
+  and then name the game we are talking about with title capitalisation, you must do this."""},
 ]
 
 functions = [

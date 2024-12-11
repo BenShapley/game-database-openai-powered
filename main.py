@@ -16,19 +16,17 @@ client = AzureOpenAI(
 
 messages = [
 	{"role": "system", "content": """If the the user asks you what a game is about that you dont think exists,
-  please check the 'get_game_description' function to find it. If the user asks where you can buy a game
-  that you dont think exists, please check the 'get_game_stores' function to find it. If the user
-  asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function
-  to find it. If the user asks you about achievements of a game you dont think exists, please check the 'get_game_achievements'
-  function to find it. If the user asks you about the genre of a game you dont think exists, please check the 
-  'get_game_genres' function to find it. If the user asks you what platforms a game you dont think exists is on,
-  please check the 'get_game_platforms' to find it. If the user asks you about how well a game did/reviews
-  for a game you dont think exists, please use the 'get_game_reviews' function to find it. If the user
-  asks you to commpare two games you dont think exist, please use the 'compare_games' function to find it.
+  please check the 'get_game_description' function to find it. 
+  If the user asks where you can buy a game that you dont think exists, please check the 'get_game_stores' function to find it. 
+  If the user asks you if a game you dont think exists has a Subreddit, please check the 'get_game_reddit' function to find it. 
+  If the user asks you about achievements of a game you dont think exists, please check the 'get_game_achievements' function to find it. 
+  If the user asks you about the genre of a game you dont think exists, please check the  'get_game_genres' function to find it. 
+  If the user asks you what platforms a game you dont think exists is on, please check the 'get_game_platforms' to find it. 
+  If the user asks you about how well a game did/reviews for a game you dont think exists, please use the 'get_game_reviews' function to find it. 
+  If the user asks you to commpare two games you dont think exist, please use the 'compare_games' function to find it.
   It is mandatory that you use the correct required parameter for the function you are using. Don’t make assumptions about what 
   values to plug into functions. If the function is 'compare_games' use the parameters 'user_input_x' and 'user_input_y'
-  else any other function use the parameter 'user_input'.
-  If the user asks you what the most popular game of a specific year was, please use the 
+  else any other function use the parameter 'user_input'. If the user asks you what the most popular game of a specific year was, please use the 
   'get_most_popular_game_by_year' function to find it & Make sure you use the correct input for this function 
   (Format this like: '[YEAR]-01-01,[YEAR]-12-31'. In other words, if the user says 'What was the most popular game of 2022?', present 
   the input as '2022-01-01,2022-12-31'. This input name is 'user_input' and you must use this name for the 'get_most_popular_game_by_year' func.)

@@ -281,7 +281,7 @@ To compare two games, use prompts like:
 
 **Platforms**
 
-*Prompt: "What platforms can I play Destiny 2 on?"*
+*Prompt: "what platforms can i play tricky towers on?"*
 
 ![Platforms](gh-assets/screenshots/platforms.png)
 

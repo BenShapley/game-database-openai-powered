@@ -28,6 +28,43 @@ h2{
     margin-bottom: 60px;
 }
 
+h5{
+	color: #ffffff;
+    font-size: 18px;
+	font-family: "Inter";
+	text-transform: capitalize;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.main_help{
+    background-color: #000000;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5);
+    border: 3.199px solid #4CC8FF;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+#faq{
+    color: #ffffff;
+    font-size: 15px;
+	font-family: "Inter";
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+#answer{
+    color: #ffffff;
+    font-size: 15px;
+	font-family: "Inter";
+    font-weight: normal;
+    padding-bottom: 5px;
+    margin-left: 20px;
+}
+
 h6{
 	color: #ffffff;
     font-size: 20px;

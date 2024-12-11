@@ -6,6 +6,8 @@
 
 An OpenAI powered game database that allows you to look up games and find out whatever you want about it whilst OpenAI helps to customise each page around the game you are viewing.
 
+See the Video Demonstration: https://youtu.be/22ZNF8jNAb0?si=8yJORcAP4SQl1HxY
+
 
 
 <p>
